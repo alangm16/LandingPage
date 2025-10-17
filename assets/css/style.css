@@ -1,0 +1,1166 @@
+/* Klammer style.css */
+
+/* Definición de paleta de colores */
+
+    :root {
+        --color-azul-energy:#1F4589; /* Azul Energy Blue*/
+        --color-amarillo-pure:#F7D600; /* Amarillo Pure Yellow */
+        --color-amarillo-forest: #F6C500; /*  Amarillo Forest */
+        --color-azul-deep: #162F7E; /* Azul Deep */
+        --color-blanco-ostion: #F3F1EE; /* Blanco Ostion */
+        --color-blanco-mixto: #F6F7F4; /* Blanco Mixto */
+        --color-blanco: #FFFFFF; /* Blanco puro */
+    }
+
+/* Definición de estilos de fuentes */
+
+    @font-face {
+    font-family: 'Helvetica';
+    src: 
+        url('../fonts/helvetica-font/Helvetica-Font/Helvetica.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-Bold.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-BoldOblique.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-Oblique.ttf') format('truetype'),
+        url('../fonts/helvetica-font/helvetica-light-587ebe5a59211.ttf') format('truetype'),
+        url('../fonts/helvetica-font/helvetica-compressed-5871d14b6903a.otf') format('opentype'),
+        url('../fonts/helvetica-font/helvetica-rounded-bold-5871d05ead8de.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: "Calling Code";
+    src: url('../fonts/calling_code/CallingCode-Regular.ttf') format('truetype'),
+        url('../fonts/calling_code/CallingCode-Regular.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    }
+
+/* Reset básico de estilos */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+/* Definiciones generales */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Helvetica', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: var(--color-blanco-ostion);
+    } 
+
+/* Definición de estilos para el Header */
+
+    header {
+        padding: 0.5rem 2rem; /* Tamaño de el header y espaciamiento */
+        background-color: var(--color-azul-energy); /* color de fondo */
+        position: fixed; /* Posición del header */
+        width: 100%; /* Ancho */
+        top: 0; /* espacio limite superior */
+        z-index: 1000; /* Orden del elemento y descendientes */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra de los bordes */
+        transition: transform 0.3s ease-in-out;
+        height: 80px;  /* Altura fija del header */
+        display: flex;  /* Flex para centrar el nav */
+        align-items: center; /* Centra verticalmente el contenido */
+    }
+
+    /* Nav */
+
+    nav {
+        display: flex; /* Contenedor para alinar elementos */
+        justify-content: space-between; /* Distribuye los elementos con un espacio en linea */
+        align-items: center; /* Alinea items al centro */
+        max-width: 1400px; /* Maximo tamaño del nav */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin: 0 auto; /* Margen del nav automatico */
+        height: 100%; /* Ocupa toda la altura del header */
+    }
+
+    .logo {
+        display: flex; /* Contenedor flexible */
+        align-items: center; /* Alineamiento al centro */
+        height: 100%; /* Ocupa toda la altura del nav */
+        padding: 0.3rem 0; /* Pequeño padding vertical */
+    }
+    
+    .logo img {
+        height: 200%; /* Altura automática */
+        max-height: 80px; /* El logo ocupa toda la altura disponible del contenedor */
+        width: auto; /* Mantiene la proporción del logo */
+        object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+        filter: brightness(1.1); /* Aumenta el brillo para mejor visibilidad */
+    }
+
+    .nav-links {
+        display: flex; /* Contenedor flexible */
+        list-style: none; /* Sin estilo de lista */
+        gap: 2rem; /* Espacio entre elementos */
+        align-items: center; /* Alinear items */
+    }
+
+    .nav-links a {
+        color: white; /* Mostrar en blanco */
+        text-decoration: none; /* Sin estilo de decoracion */
+        font-size: 0.95rem; /* Tamaño de fuente */
+        transition: color 0.3s; /* Transicion de color */
+        white-space: nowrap; /* Mantiene el texto en una sola linea horizontal */
+    }
+
+    .nav-links a:hover {
+        color: var(--color-amarillo-pure); /* Color al poner cursor encima */
+    }
+
+    .btn-contacto {
+        background-color: var(--color-amarillo-pure); /* Color amarillo de fondo */
+        color: var(--color-azul-energy); /* Color azul de letra */
+        padding: 0.6rem 1.5rem; /* Espaciamiento interior */
+        border-radius: 5px; /* Borde redondeado */
+        font-weight: bold; /* Ancho de fuente */
+        transition: background-color 0.3s; /* Transicion de color */
+    }
+
+    .btn-contacto:hover {
+        background-color: var(--color-amarillo-forest); /* Color amarillo al poner cursor encima */
+    }
+
+    /* Menu hamburguesa */
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    .nav-links.active {
+        left: 0;
+        animation: slideIn 0.3s ease-in;
+    }
+
+    @keyframes slideIn {
+        from { left: -100%; opacity: 0; }
+        to { left: 0; opacity: 1; }
+    }
+
+    /* Sub Menu */
+
+    .submenu {
+        position: relative;
+    }
+
+    /* Contenedor del dropdown */
+    .submenu .dropdown {
+        position: absolute;
+        top: 100%; /* justo debajo del link principal */
+        left: 50%; /* para centrar debajo del botón */
+        transform: translateX(-50%); /* centrar horizontal */
+        background-color: var(--color-blanco-mixto);
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 0;
+        display: none; /* oculto por defecto */
+        flex-direction: column;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* sombra más elegante */
+        border-radius: 8px; /* esquinas redondeadas */
+        z-index: 1001;
+        min-width: 220px; /* ancho mínimo */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* transición suave */
+        opacity: 0;
+        pointer-events: none; /* para evitar clics cuando está oculto */
+    }
+
+    /* Cuando el submenu se activa */
+    .submenu:hover .dropdown,
+    .submenu:focus-within .dropdown {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(5px);
+    }
+
+    .submenu .dropdown {
+        transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+    }
+
+    /* Mostrar dropdown con transición */
+    .submenu:hover .dropdown {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(5px); /* pequeña animación de entrada */
+    }
+
+    /* Hover con delay para desaparecer */
+    .submenu:not(:hover) .dropdown {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%) translateY(0);
+        transition-delay: 0.3s; /* espera 0.3s antes de desaparecer */
+    }
+
+    /* Links dentro del dropdown */
+    .dropdown li a {
+        display: block; /* ocupa todo el ancho del contenedor */
+        width: 100%;
+        padding: 0.6rem 1.5rem; /* más espacio vertical para hacer más “clickeable” */
+        color: var(--color-azul-deep);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        border-radius: 5px; /* bordes suaves para hover */
+    }
+
+    /* Hover que resalte todo el renglón */
+    .dropdown li a:hover {
+        background-color: var(--color-amarillo-pure);
+        color: var(--color-azul-energy);
+    }
+
+/* Definición de estilos para los Section */
+    
+    /* Hero Section */
+
+    .hero {
+        margin-top: 80px; /* Espacio entre el top */
+        padding: 4rem 2rem; /* Espacio interno dentro del elemento */
+        text-align: center; /* Centra el texto */
+        background-color: var(--color-blanco-ostion); /* Color de fondo */
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Tamaño de fuente para h1 */
+        color: var(--color-azul-deep); /* Color de fuente h1 */
+        margin-bottom: 1rem; /* Espacio de margen en la parte inferior del elemento */
+        line-height: 1.2; /* Distancia vertical entre lineas de texto dentro del párrafo */
+        max-width: 1200px; /* Genera el maximo ancho del hero */
+        margin-left: auto; /* Genera automaticamente el margen a la izquierda */
+        margin-right: auto; /* Genera automaticamente el margen a la derecha */
+    }
+
+    .hero h1 .highlight-yellow {
+        color: var(--color-amarillo-pure); /* Cambia el color de letra de la palabra Klammer */
+        font-family: 'Calling Code', 'Helvetica', sans-serif; /* Cambia la fuente de la palabra Klammer */
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Tamaño de fuente de p en hero */
+        color: var(--color-azul-energy); /* Color de fuente p */
+        max-width: 900px; /* Maximo ancho */
+        margin: 2rem auto; /* Ancho de margen */
+    }
+
+    /* Card de descripción */
+
+    .description-card {
+        max-width: 1000px; /* Maximo ancho del card */
+        margin: 2rem auto; /* Ancho de margen */
+        background-color: var(--color-blanco); /* Color del div */
+        padding: 2rem; /* Espacio al elemento top */
+        border-radius: 10px; /* Redondea el borde del card */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra del borde */
+    }
+
+    .description-card p {
+        text-align: center; /* Centra el texto p dentro del card */
+        color: var(--color-azul-energy); /* Color del texto */
+        font-size: 1.05rem; /* Tamaño de la fuente p */
+    }
+
+    .description-card strong {
+        font-weight: bold; /* Fuente bold para strong */
+    }
+
+    /* ¿Qué significa esto? */
+
+    .benefits {
+        padding: 4rem 2rem; /* Espacios Arriba Izquierda */
+        max-width: 1200px; /* Maximo ancho */
+        margin: 0 auto; /* Margen automático */
+    }
+
+    .benefits h2 {
+        text-align: center; /* Centra el titulo ¿Qué significa esto? */
+        color: var(--color-azul-energy); /* Color del titulo h2 */
+        font-size: 2.2rem; /* Tamaño de la fuente */
+        margin-bottom: 3rem; /* Margen inferior */
+    }
+
+    .benefits-grid {
+        display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
+        grid-template-columns: repeat(auto-fit,minmax(280px, 1fr)); /* Crea las columnas dentro del contenedor */
+        gap: 2rem; /* Espacio entre cards */
+        margin-bottom: 3rem; /* Margen inferior */
+    }
+
+    .benefit-card {
+        background-color: var(--color-blanco); /* Color del card */
+        padding: 2rem; /* Espacio interno dentro del elemento */
+        border-radius: 10px; /* Redondea el borden del card */
+        text-align: center; /* Centra el texto y los iconos */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra del borde */
+        transition: transform 0.3s, box-shadow 0.3s; /* Animacion elementos */
+    }
+
+    .benefit-card:hover {
+        transform: translateY(-5px); /* Movimiento hacia arriba al colocar el cursor */
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Elimina la sombra al hacer la animación */
+    }
+
+    .benefit-icon {
+        font-size: 3rem; /* Tamaño de los iconos */
+        color: var(--color-amarillo-pure); /* Color interno de iconos */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .benefit-card h3 {
+        color: var(--color-azul-energy); /* Color de texto h3 */
+        font-size: 1.1rem; /* Tamaño de fuente */
+        font-weight: bold; /* Ancho de fuente */
+    }
+
+    .cta-button {
+        text-align: center; /* Centra el texto del boton */
+        margin-top: 2rem; /* Margen superior */
+    }
+
+    .btn-primary {
+        display: inline-block; /* Elemento en línea */
+        background-color: var(--color-azul-energy); /* Color del boton */
+        color: var(--color-blanco); /* Color de texto del boton */
+        padding: 1rem 2.5rem; /* Espacio interno dentro del boton */
+        border-radius: 5px; /* Borde redondeado */
+        text-decoration: none; /* Elimina la decoración del texto */
+        font-weight: bold; /* Ancho en bold */
+        font-size: 1.05rem; /* Tamaño del font */
+        transition: background-color 0.3s; /* Color al realizar transición */
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-azul-deep); /* Color del boton al hacer transición */
+    }
+
+    /* Nuestras soluciones */
+
+    .solutions {
+        padding: 4rem 2rem; /* Espacio interior */
+        background-color: var(--color-blanco); /* Color de fondo de la sección */
+    }
+
+    .solutions h2 {
+        text-align: center; /* Centra el texto h2 */
+        color: var(--color-azul-energy); /* Color del titulo */
+        font-size: 2.2rem; /* Tamaño de la fuente */
+        margin-bottom: 1rem; /* Margen inferior titulo */
+    }
+
+    .solutions-subtitle {
+        text-align: center; /* Centra el texto subtitle */
+        color: var(--color-azul-energy); /* Color del texto */
+        margin-bottom: 3rem; /* Margen inferior */
+        font-size: 1.05rem; /* Tamaño de fuente */
+    }
+
+    .solutions-grid {
+        display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem; /* Espacio entre los grids */
+        max-width: 1200px; /* Ancho máximo */
+        margin: 0 auto; /* Margen general */
+    }
+
+    .solution-card {
+        background-color: var(--color-blanco-ostion); /* Color de los cards */
+        padding: 2.5rem; /* Espacio interior de los cards */
+        border-radius: 10px; /* Borde redondeado de los cards */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra de card */
+    }
+
+    .solution-icon {
+        width: 60px; /* Ancho del icono */
+        height: 60px; /* Alto del icono */
+        background-color: var(--color-blanco-mixto); /* Color de fondo del icono */
+        border-radius: 50%; /* Borde redondeado */
+        display: flex; /* Contenedor flexible para alinear y distribuir el item */
+        align-items: center; /* Centra el icono en altura */
+        justify-content: center; /* Centra el icono en ancho */
+        margin: 0 auto 1.5rem; /* Margen que ayuda a centrar el icono */
+        font-size: 2rem; /* Tamaño del icono */
+        color: var(--color-amarillo-pure); /* Color */
+    }
+
+    .solution-card h3 {
+        color: var(--color-azul-energy); /* Color de texto h3 */
+        font-size: 1.3rem; /* Tamaño de fuente del texto */
+        margin-bottom: 1rem; /* Margen inferior */
+        text-align: center; /* Centra el texto */
+    }
+
+    .solution-card p {
+        color: var(--color-azul-energy); /* Color de los parrafos */
+        font-size: 0.95rem; /* Tamaño de la fuente */
+        text-align: center; /* Centra el texto */
+        line-height: 1.6; /* Distancia vertical entre lineas */
+    }
+
+    /* Nosotros */
+
+    .about {
+        padding: 4rem 2rem; /* Espacio inferior */
+        background-color: var(--color-blanco-ostion);
+    }
+
+    .about h2 {
+        text-align: center; /* Centra el texto */
+        color: var(--color-azul-energy); /* Color del texto h2 */
+        font-size: 2.2rem; /* Tamaño de la fuente */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .about-subtitle {
+        text-align: center; /* Centrar texto */
+        color: var(--color-azul-energy); /* Color de la descripción */
+        margin-bottom: 3rem; /* Margen inferior */
+        font-size: 1.05rem; /* Tamaño de la fuente */
+    }
+
+    .about-container {
+        max-width: 1200px; /* Maximo ancho */
+        margin: 0 auto; /* Margenes automaticos */
+        display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
+        grid-template-columns: 1fr 1fr; /* Crea dos columnas */
+        gap: 3rem; /* Espacio entre las columnas */
+        align-items: start; /* Coloca el interlineado al inicio */
+    }
+
+    .about-text {
+        color: var(--color-azul-energy); /* Color del texto about */
+        line-height: 1.8; /* Espacio vertical entre lineas */
+    }
+
+    .about-cards {
+        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
+        flex-direction: column; /* Organiza el contenedor en columna */
+        gap: 2rem; /* Espacio entre cards */
+    }
+
+    .about-card {
+        background-color: var(--color-blanco); /* Color del card */
+        padding: 2rem; /* Espacio interno del card */
+        border-radius: 10px; /* Borde redondeado */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra del borde del card */
+    }
+
+    .about-card-header {
+        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
+        align-items: center; /* Centra los elementos */
+        gap: 1rem; /* Espacio entre icono y texto */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .about-card-icon {
+        width: 50px; /* Ancho de icono */
+        height: 50px; /* Alto de icono */
+        background-color: var(--color-amarillo-pure); /* Color fondo de icono */
+        border-radius: 50%; /* Borde redondeado */
+        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
+        align-items: center; /* Alinea icono verticalmente */
+        justify-content: center; /* Alinea icono horizontalmente */
+        font-size: 1.5rem; /* Tamaño de icono */
+        color: var(--color-blanco); /* Color de icono */
+    }
+
+    .about-card h3 {
+        color: var(--color-azul-energy); /* Color del titulo acerca de */
+        font-size: 1.2rem; /* Tamaño de la fuente h3 */
+    }
+
+    .about-card p {
+        color: var(--color-azul-energy); /* Color del texto p */
+        line-height: 1.6; /* Espacio entre lineas */
+    }
+
+    /* Nuestros Clientes */
+
+    .clients {
+        padding: 4rem 2rem; /* Espacio interior */
+        background-color: var(--color-blanco); /* Color de fondo */
+    }
+
+    .clients h2 {
+        text-align: center; /* Alinea el h2 al centro */
+        color: var(--color-azul-energy); /* Color del titulo h2 */
+        font-size: 2.2rem; /* Tamaño de la fuente */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .clients-subtitle {
+        text-align: center; /* Centra el subtitulo */
+        color: var(--color-azul-energy); /* Color de la fuente */
+        margin-bottom: 3rem; /* Margen inferior */
+        font-size: 1.05rem; /* Tamaño de la fuente */
+    }
+
+    .clients-grid {
+        display: grid; display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
+        grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas */
+        gap: 2rem; /* Espacio entre columnas */
+        max-width: 1000px; /* Máximo ancho */
+        margin: 0 auto 2rem; /* Margen automatico */
+    }
+
+    .client-card {
+        background-color: var(--color-blanco-ostion); /* Color de los cards */
+        padding: 2rem; /* Tamaño interior del card */
+        border-radius: 10px; /* Borde redondeado */
+        text-align: center; /* Centrado del texto */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombreado del card */
+    }
+
+    .client-icon {
+        font-size: 3rem; /* Tamaño del icono */
+        color: var(--color-azul-energy); /* Color del icono */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .client-card h3 {
+        color: var(--color-azul-energy); /* Color del titulo */
+        font-size: 1.1rem; /* Tamaño de la fuente */
+    }
+
+    .clients-footer {
+        text-align: center; /* Alinea texto */
+        color: var(--color-azul-energy); /*  Color del texto */
+        max-width: 900px; /* Maximo ancho del footer clients */
+        margin: 2rem auto 1rem; /* Margenes */
+        font-size: 0.95rem; /* Tamaño de la fuente */
+    }
+
+    .clients-commitment {
+        text-align: center; /* Centra el texto del commitment */
+        color: var(--color-azul-energy); /* Color del texto */
+        font-weight: bold; /* Ancho del font */
+        font-size: 1.05rem; /* Tamaño de la fuente */
+    }
+
+    /* Blog */
+
+    .blog {
+        padding: 4rem 2rem; /* Tamaño interior - Margen interior */
+        background-color: var(--color-blanco-ostion); /* Color de fondo */   
+    }
+
+    .blog h2 {
+        text-align: center; /* Alinear titulo Blog al centro */
+        color: var(--color-azul-energy); /* Color del texto */
+        font-size: 2.2rem; /* Tamaño del font */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .blog-subtitle {
+        text-align: center; /* Alinear subtitulo al centro */
+        color: var(--color-azul-energy); /* Color del font */
+        margin-bottom: 3rem; /* Margen inferior */
+        font-size: 1.05rem; /* Tamaño del font */
+    }
+
+    .blog-grid {
+        display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea la columna */
+        gap: 2rem; /* Espacio entre columnas */
+        max-width: 1200px; /* Maximo ancho */
+        margin: 0 auto 2rem; /* Margen automatico */
+    }
+
+    .blog-card {
+        background-color: var(--color-blanco); /* Color a las cards */
+        border-radius: 10px; /* Redondea los bordes */
+        padding: 2rem; /* Espacios internos */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Borde sombreado */
+        transition: transform 0.3s; /* Movimiento hacia arriba */
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px); /* Transicion de movimiento */
+    }
+
+    .blog-date {
+        color: var(--color-azul-energy); /* Color de texto fecha */
+        font-size: 0.9rem; /* Tamaño de fuente */
+        margin-bottom: 1rem; /* Margen inferior */
+        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
+        align-items: center; /* Alinea los elementos al centro */
+        gap: 0.5rem; /* Espacio entre elementos de la fecha */
+    }
+
+    .blog-card h3 {
+        color: var(--color-azul-energy); /* Color del titulo h3 en azul */
+        font-size: 1.3rem; /* Tamaño de letra */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .blog-card p {
+        color: var(--color-azul-energy); /* Color de p azul */
+        margin-bottom: 1.5rem; /* Margen inferior */
+        line-height: 1.6; /* Alineamiento en altura */
+    }
+
+    .blog-link {
+        color: var(--color-azul-energy); /* Links en azul */
+        text-decoration: none; /* Sin estilo de decoracion */
+        font-weight: bold; /* Ancho de fuente */
+        display: inline-flex; /* Alineamiento en linea */
+        align-items: center; /* Alineamiento de items al centro */
+        gap: 0.5rem; /* Espacio entre elementos */
+    }
+
+    .blog-link:hover {
+        color: var(--color-azul-deep); /* Color al colocar cursor */
+    }
+
+    .blog-cta {
+        text-align: center; /* Alinear Ver todos los articulos al centro */
+    }
+
+    .btn-secondary {
+        display: inline-block; /* Alinear boton en linea */
+        background-color: var(--color-blanco); /* Color de boton */ 
+        color: var(--color-azul-energy); /* Color de texto */
+        padding: 1rem 2.5rem; /* Espaciamiento interno */
+        border: 2px solid var(--color-azul-energy); /* Borde de color azul */
+        border-radius: 5px; /* Borde redondeado */
+        text-decoration: none; /* Sin estilo de decoracion */
+        font-weight: bold; /* Ancho de font */
+        transition: all 0.3s; /* Transicion */
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--color-azul-energy); /* Color al colocar cursor */
+        color: var(--color-blanco); /* Color de letra */
+    }
+
+    /* Contacto */
+
+    .contact {
+        padding: 4rem 2rem; /* Espaciamiento interno */
+        background-color: var(--color-blanco); /* Color del fondo */
+    }
+
+    .contact h2 {
+        text-align: center; /* Alinea el titulo Contacto al centro */
+        color: var(--color-azul-energy); /* Color del texto */
+        font-size: 2.2rem; /* Tamaño de letra */
+        margin-bottom: 0.5rem; /* Margen inferior */
+    }
+
+    .contact-subtitle {
+        text-align: center; /* Alinea subtitulo al centro */
+        color: var(--color-azul-energy); /* Color de font */
+        margin-bottom: 3rem; /* Margen inferior */
+    }
+
+    .contact-container {
+        max-width: 1200px; /* Maximo ancho */
+        margin: 0 auto; /* Margen automatico */
+        display: grid; /* Facilita la creación de columnas */
+        grid-template-columns: 1fr 1fr; /* Crea dos columnas */
+        gap: 3rem; /* Espaciamiento entre columnas */
+        align-items: start; /* Alineamiento al inicio */
+    }
+
+    .contact-info {
+        background-color: var(--color-blanco-ostion); /* Color de columna */
+        padding: 2rem; /* Espaciamiento interno */
+        border-radius: 10px; /* Borde redondedo */
+    }
+
+    .contact-info h3 {
+        color: var(--color-azul-energy); /* Color de h3 */
+        font-size: 1.5rem; /* Tamaño de font */
+        margin-bottom: 2rem; /* Margen inferior */
+    }
+
+    .contact-item {
+        display: flex; /* Crea un contenedor que permite organizar los items */
+        align-items: center; /* Alinear items al centro */
+        gap: 1rem; /* Espaciamiento entre items */
+        margin-bottom: 1.5rem; /* Margen inferior */
+    }
+
+    .contact-icon {
+        width: 40px; /* Ancho de icono */
+        height: 40px; /* Alto de icono */
+        background-color: var(--color-amarillo-pure); /* Color de fondo de iconos */
+        border-radius: 50%; /* Borde redondeado */
+        display: flex; /* Contenedor flex */
+        align-items: center; /* Alinear items al centro en altura */
+        justify-content: center; /* Alinear items al centro en ancho */
+        color: var(--color-blanco); /* Color de icono */
+    }
+
+    .contact-details p {
+        margin: 0; /* Margen 0 */
+        color: var(--color-azul-energy); /* Color de p */
+    }
+
+    .contact-details p:first-child {
+        font-size: 0.85rem; /* Tamaño de letra */
+        opacity: 0.8; /* Opacidad */
+    }
+
+    .contact-details p:last-child {
+        font-weight: bold; /* Ancho de fuente */
+        font-size: 1.1rem; /* Tamaño de fuente */
+    }
+
+    .why-us {
+        margin-top: 2rem; /* Margen superior */
+    }
+
+    .why-us h4 {
+        color: var(--color-azul-energy); /* Color h4 */
+        margin-bottom: 1rem; /* Margen inferior */
+    }
+
+    .why-us ul {
+        list-style: none; /* Elimina la lista de estilo */
+    }
+
+    .why-us li {
+        color: var(--color-azul-energy); /* Color de elemento */
+        margin-bottom: 0.8rem; /* Margen inferior */
+        padding-left: 1.5rem; /* Margen interior izquierdo */
+        position: relative; /* Posicion relativa */
+    }
+
+    .why-us li:before {
+        content: "✓"; /* Coloca el simbolo como viñeta */
+        position: absolute; /* Posicion absoluta */
+        left: 0; /* Posicion horizontal */
+        color: var(--color-amarillo-pure); /* Color de la viñeta */
+        font-weight: bold; /* Ancho de fuente */
+    }
+
+    .contact-form {
+        background-color: var(--color-blanco-ostion); /* Color de formulario */
+        padding: 2rem; /* Espaciamiento interior */
+        border-radius: 10px; /* Borde redondeado */
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem; /* Margen inferior */
+    }
+
+    .form-group label {
+        display: block; /* Ocupa todo el ancho en su contenedor */
+        color: var(--color-azul-energy); /* Color de la etiqueta */
+        margin-bottom: 0.5rem; /* Margen inferior */
+        font-weight: bold; /* Ancho de fuente */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%; /* Anchos al 100 */
+        padding: 0.8rem; /* Espaciamiento interior */
+        border: 1px solid #ddd; /* Borde color blanco */
+        border-radius: 5px; /* Borde redondeado */
+        font-family: 'Helvetica', Arial, sans-serif; /* Tipo de fuente */
+        font-size: 0.95rem; /* Tamaño de fuente */
+    }
+
+    .form-group textarea {
+        resize: vertical; /* Tamaño vertical */
+        min-height: 120px; /* Minimo altura */
+    }
+
+    .btn-submit {
+        width: 100%; /* Ancho al 100 */
+        background-color: var(--color-azul-energy); /* Color de fondo */
+        color: white; /* Color de letras */
+        padding: 1rem; /* Espaciamiento interior */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Borde redondeado */
+        font-size: 1rem; /* Tamaño de fuente */
+        font-weight: bold; /* Ancho de fuente */
+        cursor: pointer; /* Cursor */
+        transition: background-color 0.3s; /* Transicion */
+        display: flex; /* Contenedor flexible */
+        align-items: center; /* Alinea items al centro */
+        justify-content: center; /* Alineamiento al centro en ancho */
+        gap: 0.5rem; /* Espaciamiento entre elementos */
+    }
+
+    .btn-submit:hover {
+        background-color: var(--color-azul-deep); /* Color de boton al colocar cursor */
+    }
+
+/* Definición de estilos para el Footer */
+
+    footer {
+        background-color: var(--color-azul-energy); /* Color de fondo */
+        color: var(--color-blanco); /* Color de letras */
+        padding: 3rem 2rem 1rem; /* Espaciamiento interior */
+        /* max-height: 330px; */
+    }
+
+    .footer-container {
+        max-width: 1200px; /* Maximo ancho */
+        margin: 0 auto; /* Margen automatico */
+        display: grid; /* Contenedor para columans */
+        grid-template-columns: 2fr 1fr 1fr; /* Crear columnas */
+        gap: 3rem; /* Espaciamiento entre columnas */
+        margin-bottom: 2rem; /* Margen inferior */
+    }
+
+    .footer-brand {
+        display: flex; /* Contenedor flexible */
+        flex-direction: column; /* Direccion en columnas */
+        align-items: start; /* Alineamiento al inicio */
+    }
+
+    .footer-brand img {
+        height: 160px; /* Altura */
+        width: auto; /* Mantiene la proporción del logo */
+        object-fit: contain; /* Asegura que la imagen se ajuste sin distorsión */
+        margin-bottom: 1rem; /* Margen inferior */
+        filter: brightness(1.1); /* Aumenta el brillo para mejor visibilidad */
+    }
+
+    .footer-brand p {
+        margin-left: 25px;
+        font-size: 0.9rem; /* Tamaño de letra */
+        opacity: 0.9; /* Opacidad */
+        line-height: 1.5; /* Alineamiento vertical */
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+        margin-bottom: 1rem; /* Margen inferior */
+        font-size: 1.1rem; /* Tamaño de letra */
+        color: var(--color-blanco); /* Color blanco en h4 */
+    }
+
+    .footer-links ul {
+        list-style: none; /* Sin estilo de lista */
+    }
+
+    .footer-links li {
+        margin-bottom: 0.5rem; /* Margen inferior */
+    }
+
+    .footer-links a {
+        color: var(--color-blanco); /* Color de links */
+        text-decoration: none; /* Sin decoracion */
+        opacity: 0.9; /* Opacidad */
+        transition: opacity 0.3s; /* Transicion */ 
+        font-size: 0.95rem; /* Tamaño de fuente */
+    }
+
+    .footer-links a:hover {
+        opacity: 1; /*  Opacidad al colocar cursor */
+        color: var(--color-amarillo-pure); /* Color */
+    }
+
+    .footer-contact p {
+        margin-bottom: 0.8rem; /* Margen inferior */
+        opacity: 0.9; /* Opacidad */
+        display: flex; /* Contenedor flexible */
+        align-items: center; /* Centrar items */
+        gap: 0.5rem; /* Espaciamiento entre elementos */
+        font-size: 0.9rem; /* Tamaño de fuente */
+        line-height: 1.5; /* Alineamiento vertical */
+    }
+
+    .footer-contact i {
+        min-width: 20px; /* Minimo ancho */
+    }
+
+    .footer-bottom {
+        text-align: center; /* Alinear al centro */
+        padding-top: 2rem; /* Margen interior superior */
+        border-top: 1px solid rgba(255,255,255,0.1); /* Sombrear borde */
+        font-size: 0.9rem; /* Tamaño de fuente */
+        opacity: 0.8; /* Opacidad */
+    }
+
+    /* Responsividad */
+
+    /* === TABLETS / LAPTOPS PEQUEÑOS (≤1024px) === */
+    @media (max-width: 1024px) {
+        /* ----- CONTACTO ----- */
+        .contact-container {
+            grid-template-columns: 1fr; /* Una sola columna */
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .contact-info,
+        .contact-form {
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            order: 1;
+        }
+
+        .contact-form {
+            order: 2;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    /* === TABLETS Y MÓVILES GRANDES (≤768px) === */
+    @media (max-width: 768px) {
+        /* ----- HEADER ----- */
+        header {
+            padding: 0.5rem 1rem;
+            height: 80px;
+        }
+
+        .logo {
+            padding: 0.5rem 0;
+        }
+
+        .logo img {
+            max-height: 65px;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .nav-links {
+            position: fixed;
+            left: -100%;
+            top: 80px;
+            flex-direction: column;
+            background-color: var(--color-azul-energy);
+            width: 100%;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+            padding: 2rem 0;
+            gap: 1.5rem;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .submenu .dropdown {
+            display: none !important;
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            margin-top: 80px;
+            padding: 3rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        /* ----- SECCIONES GENERALES ----- */
+        .benefits h2,
+        .solutions h2,
+        .about h2,
+        .clients h2,
+        .blog h2,
+        .contact h2 {
+            font-size: 1.8rem;
+        }
+
+        /* ----- CLIENTES ----- */
+        .clients-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* ----- CONTACTO ----- */
+        .contact {
+            padding: 3rem 1.5rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            width: 95%;
+            padding: 1.8rem;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .footer-brand {
+            text-align: center;
+            align-items: center;
+        }
+
+        .footer-brand img {
+            height: 140px;
+            margin: 0 auto;
+        }
+
+        .footer-links,
+        .footer-contact {
+            text-align: center;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-contact p {
+            justify-content: center;
+            word-break: break-word;
+        }
+
+        footer {
+            padding: 2.5rem 1.5rem 1rem;
+        }
+
+    }
+
+    /* === MÓVILES PEQUEÑOS (≤480px) === */
+    @media (max-width: 480px) {
+        /* ----- HEADER ----- */
+        header {
+            padding: 0.5rem 1rem;
+            height: 80px;
+        }
+
+        .logo img {
+            max-height: 60px;
+        }
+
+        /* ----- HERO ----- */
+        .hero h1 {
+            font-size: 1.6rem;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+        }
+
+        /* ----- TARJETAS / SECCIONES ----- */
+        .description-card,
+        .benefit-card,
+        .solution-card,
+        .about-card,
+        .blog-card {
+            padding: 1.5rem;
+        }
+
+        .benefits-grid,
+        .solutions-grid,
+        .blog-grid,
+        .clients-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* ----- CONTACTO ----- */
+        .contact {
+            padding: 3rem 1.2rem;
+        }
+
+        .contact-info,
+        .contact-form {
+            width: 100%;
+            padding: 1.5rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+        }
+
+        .contact-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .contact-icon {
+            margin-bottom: 0.5rem;
+        }
+
+        .why-us ul {
+            padding-left: 0;
+        }
+
+        .why-us li {
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-size: 0.9rem;
+        }
+
+        .btn-submit {
+            font-size: 1rem;
+            padding: 0.9rem;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer-container {
+            gap: 2rem;
+        }
+
+        .footer-brand img {
+            height: 120px;
+            margin: 0 auto;
+        }
+
+        .footer-brand p,
+        .footer-links a,
+        .footer-contact p {
+            font-size: 0.85rem;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1rem;
+        }
+
+        footer {
+            padding: 2rem 1rem 1rem;
+        }
+    }
