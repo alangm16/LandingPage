@@ -24,13 +24,13 @@
                 <li class="submenu">
                     <a href="#soluciones" onclick="closeMenu()">Soluciones</a>
                     <ul class="dropdown">
-                        <li><a href="#inteligencia-negocios" onclick="closeMenu()">Inteligencia de Negocios</a></li>
-                        <li><a href="#automatizacion-rpa" onclick="closeMenu()">Automatización Robótica de Procesos</a></li>
-                        <li><a href="#desarrollo-software" onclick="closeMenu()">Desarrollo de Software</a></li>
+                        <li><a href="inteligenciaNegocios.html" onclick="closeMenu()">Inteligencia de Negocios</a></li>
+                        <li><a href="rpa.html" onclick="closeMenu()">Automatización Robótica de Procesos</a></li>
+                        <li><a href="desarrolloSoftware.html" onclick="closeMenu()">Desarrollo de Software</a></li>
                     </ul>
                 </li>
                 <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
-                <li><a href="#blog" onclick="closeMenu()">Blog</a></li>
+                <!-- <li><a href="#blog" onclick="closeMenu()">Blog</a></li> -->
                 <li><a href="#contacto" class="btn-contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
         </nav>
@@ -38,49 +38,63 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <!-- Video de fondo para el Hero -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/video/heroVideo.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
         <h1>
             El elemento más importante<br>
             para un <span class="highlight-yellow">Klammer</span><br>
             es la <span class="highlight-blue">información</span>
         </h1>
-        <p>Transformar tu data en soluciones es la llave para lograr ventajas competitivas en un mercado hostil y demasiado dinámico.</p>
-        
-        <div class="description-card">
-            <p>Creamos <strong>herramientas tecnológicas</strong> para la <strong>automatización de procesos</strong> por medio de robots y la <strong>inteligencia empresarial</strong>.</p>
+
+        <div class="description-wrapper">
+            <img src="assets/img/LOGOTIPO/llave.png" alt="Llave izquierda" class="llave llave-izquierda">
+            <div class="description-card">
+                <p>
+                Transformar tu data en soluciones es la llave para lograr ventajas competitivas en un mercado hostil y demasiado dinámico.
+                Creamos <strong>herramientas tecnológicas</strong> para la <strong>automatización de procesos</strong> por medio de robots y la <strong>inteligencia empresarial</strong>.
+                </p>
+            </div>
+            <img src="assets/img/LOGOTIPO/llave.png" alt="Llave derecha" class="llave llave-derecha">
         </div>
+
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits">
-        <h2>¿Qué significa esto?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                <h3>Mejor toma de decisiones</h3>
+    <section class="benefits-wrapper">
+        <div class="benefits">
+            <h2>¿Qué significa esto?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <h3>Mejor toma de decisiones</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Productividad y efectividad</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-user-group"></i></div>
+                    <h3>Mejor servicio al cliente</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>Más rentabilidad</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Escalabilidad</h3>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Anticipa tendencias</h3>
+                </div>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Productividad y efectividad</h3>
+            <div class="cta-button">
+                <a href="#contacto" class="btn-primary">Comienza tu transformación digital</a>
             </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-user-group"></i></div>
-                <h3>Mejor servicio al cliente</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-database"></i></div>
-                <h3>Más rentabilidad</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-microchip"></i></div>
-                <h3>Escalabilidad</h3>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Anticipa tendencias</h3>
-            </div>
-        </div>
-        <div class="cta-button">
-            <a href="#contacto" class="btn-primary">Comienza tu transformación digital</a>
         </div>
     </section>
 
@@ -92,17 +106,29 @@
             <div class="solution-card">
                 <div class="solution-icon"><i class="fa-solid fa-brain"></i></div>
                 <h3>Inteligencia de Negocios</h3>
-                <p>Transforma datos complejos en información valiosa para tomar decisiones estratégicas. Dashboards interactivos, reportes automatizados y análisis predictivo que impulsan el crecimiento de tu empresa.</p>
+                <!-- <p>Transforma datos complejos en información valiosa para tomar decisiones estratégicas. 
+                    Dashboards interactivos, reportes automatizados y análisis predictivo que impulsan el crecimiento de tu empresa.</p> -->
+                    <div class="cta-button">
+                        <a href="inteligenciaNegocios.html" class="btn-secondary">Ver más</a>
+                    </div>
             </div>
             <div class="solution-card">
                 <div class="solution-icon"><i class="fa-solid fa-robot"></i></div>
                 <h3>Automatización Robótica de Procesos</h3>
-                <p>Libera a tu equipo de tareas repetitivas con robots de software inteligentes. Aumenta la eficiencia operativa, reduce errores y optimiza recursos mientras tu personal se enfoca en lo realmente importante.</p>
+                <!-- <p>Libera a tu equipo de tareas repetitivas con robots de software inteligentes. 
+                    Aumenta la eficiencia operativa, reduce errores y optimiza recursos mientras tu personal se enfoca en lo realmente importante.</p> -->
+                    <div class="cta-button">
+                        <a href="rpa.html" class="btn-secondary">Ver más</a>
+                    </div>
             </div>
             <div class="solution-card">
                 <div class="solution-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3>Desarrollo de Software</h3>
-                <p>Soluciones tecnológicas a medida que se adaptan perfectamente a las necesidades únicas de tu negocio. Desde aplicaciones web hasta sistemas empresariales completos, construidos con las últimas tecnologías.</p>
+                <!-- <p>Soluciones tecnológicas a medida que se adaptan perfectamente a las necesidades únicas de tu negocio. 
+                    Desde aplicaciones web hasta sistemas empresariales completos, construidos con las últimas tecnologías.</p> -->
+                    <div class="cta-button">
+                        <a href="desarrolloSoftware.html" class="btn-secondary">Ver más</a>
+                    </div>
             </div>
         </div>
     </section>
@@ -147,38 +173,75 @@
     <section class="clients">
         <h2>Nuestros Clientes</h2>
         <p class="clients-subtitle">Confianza de empresas líderes en diversos sectores</p>
-        <div class="clients-grid">
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Sector Financiero</h3>
-            </div>
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Manufactura</h3>
-            </div>
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Retail</h3>
-            </div>
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Salud</h3>
-            </div>
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Logística</h3>
-            </div>
-            <div class="client-card">
-                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
-                <h3>Tecnología</h3>
+
+        <div class="slider slider-left">
+            <div class="slide-track">
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
+                        class="aliados-logo-image"></div>
+
+                <!-- duplicados para efecto infinito -->
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
+                        class="aliados-logo-image"></div>
             </div>
         </div>
+
+        <div class="slider slider-right">
+            <div class="slide-track">
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
+                        class="aliados-logo-image"></div>
+
+                <!-- duplicados para efecto infinito -->
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
+                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
+                        class="aliados-logo-image"></div>
+            </div>
+        </div>
+
         <p class="clients-footer">Hemos trabajado con empresas de todos los tamaños, desde startups innovadoras hasta corporaciones multinacionales.</p>
         <p class="clients-commitment">Nuestro compromiso: resultados medibles y relaciones a largo plazo</p>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="blog">
+    <!-- <section id="blog" class="blog">
         <h2>Blog</h2>
         <p class="blog-subtitle">Insights, tendencias y mejores prácticas en tecnología empresarial</p>
         <div class="blog-grid">
@@ -204,7 +267,7 @@
         <div class="blog-cta">
             <a href="#" class="btn-secondary">Ver todos los artículos</a>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contacto" class="contact">
@@ -351,6 +414,34 @@
                     closeMenu();
                 }
             });
+        });
+
+        const submenus = document.querySelectorAll('.submenu');
+
+        submenus.forEach(submenu => {
+            const dropdown = submenu.querySelector('.dropdown');
+            let timeout;
+
+            const showDropdown = () => {
+                clearTimeout(timeout);
+                dropdown.style.opacity = '1';
+                dropdown.style.pointerEvents = 'auto';
+                dropdown.style.transform = 'translateX(-50%) translateY(5px)';
+            };
+
+            const hideDropdown = () => {
+                timeout = setTimeout(() => {
+                    dropdown.style.opacity = '0';
+                    dropdown.style.pointerEvents = 'none';
+                    dropdown.style.transform = 'translateX(-50%) translateY(0)';
+                }, 300); // delay antes de ocultar
+            };
+
+            // Mantener visible mientras el mouse esté sobre el botón o el dropdown
+            submenu.addEventListener('mouseenter', showDropdown);
+            submenu.addEventListener('mouseleave', hideDropdown);
+            dropdown.addEventListener('mouseenter', showDropdown);
+            dropdown.addEventListener('mouseleave', hideDropdown);
         });
 
     </script>

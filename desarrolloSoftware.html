@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo de Software</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo"><img src="assets/img/LOGOTIPO/KlammerHeader.png" alt="klammer"></div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+                <li class="submenu">
+                    <a href="index.html#soluciones" onclick="closeMenu()">Soluciones</a>
+                    <ul class="dropdown">
+                        <li><a href="inteligenciaNegocios.html" onclick="closeMenu()">Inteligencia de Negocios</a></li>
+                        <li><a href="rpa.html" onclick="closeMenu()">Automatización Robótica de Procesos</a></li>
+                        <li><a href="desarrolloSoftware.html" onclick="closeMenu()">Desarrollo de Software</a></li>
+                    </ul>
+                </li>
+                <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
+                <!-- <li><a href="#blog" onclick="closeMenu()">Blog</a></li> -->
+                <li><a href="#contacto" class="btn-contacto" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

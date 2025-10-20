@@ -55,7 +55,7 @@
         line-height: 1.6;
         color: #333;
         background-color: var(--color-blanco-ostion);
-    } 
+    }
 
 /* Definición de estilos para el Header */
 
@@ -171,17 +171,17 @@
         left: 50%; /* para centrar debajo del botón */
         transform: translateX(-50%); /* centrar horizontal */
         background-color: var(--color-blanco-mixto);
-        list-style: none;
-        padding: 0.5rem 0;
-        margin: 0;
-        display: none; /* oculto por defecto */
-        flex-direction: column;
+        list-style: none; /* Sin estilo de lista */
+        padding: 0.5rem 0; /* Margen interior */
+        margin: 0; /* Sin margen exterior */
+        display: flex; /* oculto por defecto */
+        flex-direction: column; /* Direccion del flex en columna */
         box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* sombra más elegante */
         border-radius: 8px; /* esquinas redondeadas */
         z-index: 1001;
         min-width: 220px; /* ancho mínimo */
         transition: opacity 0.3s ease, transform 0.3s ease; /* transición suave */
-        opacity: 0;
+        opacity: 0; /* 0 opacidad */
         pointer-events: none; /* para evitar clics cuando está oculto */
     }
 
@@ -237,15 +237,49 @@
     /* Hero Section */
 
     .hero {
+        position: relative; /* Posicion relativa del hero para el video */
         margin-top: 80px; /* Espacio entre el top */
         padding: 4rem 2rem; /* Espacio interno dentro del elemento */
         text-align: center; /* Centra el texto */
-        background-color: var(--color-blanco-ostion); /* Color de fondo */
+        background-color: var(--color-blanco); /* Color de fondo */
+        overflow: hidden; /* Para que no salte a otro section */
+    }
+
+    .hero-video {
+        position: absolute; /* Posicion absoluta del video */
+        top: 0; /* 0 margen superior */
+        left: 0; /* 0 margen izquierdo */
+        width: 100%; /* 100% del ancho */
+        height: 100%; /* 100% de altura */
+        object-fit: cover; /* hace que el video cubra todo el área */
+        z-index: 0; /* lo manda al fondo */
+        opacity: 1; /* ajusta la transparencia del video */
+        background-color: var(--color-blanco);
+    }
+
+    /* El contenido encima del video */
+    .hero h1,
+    .hero p,
+    .hero .description-card {
+        position: relative;
+        z-index: 1; /* asegura que esté delante del video */
+    }
+
+    /* Opcional: para mejorar la legibilidad del texto */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4); /* capa semitransparente sobre el video */
+        z-index: 0;
     }
 
     .hero h1 {
         font-size: 3rem; /* Tamaño de fuente para h1 */
-        color: var(--color-azul-deep); /* Color de fuente h1 */
+        color: var(--color-blanco); /* Color de fuente h1 */
         margin-bottom: 1rem; /* Espacio de margen en la parte inferior del elemento */
         line-height: 1.2; /* Distancia vertical entre lineas de texto dentro del párrafo */
         max-width: 1200px; /* Genera el maximo ancho del hero */
@@ -260,25 +294,52 @@
 
     .hero p {
         font-size: 1.1rem; /* Tamaño de fuente de p en hero */
-        color: var(--color-azul-energy); /* Color de fuente p */
+        color: var(--color-blanco); /* Color de fuente p */
         max-width: 900px; /* Maximo ancho */
         margin: 2rem auto; /* Ancho de margen */
+    }
+
+    /* Llaves */
+
+    .description-wrapper {
+        display: flex; /* Display en flex */
+        align-items: center; /* Centra verticalmente las llaves con el texto */
+        justify-content: center; /* Centra el grupo en el hero */
+        gap: 0; /* Espacio entre las columnas */
+        position: relative; /* Posicion relativa */
+        z-index: 1; /* Asegura que este sobre el video */
+        flex-wrap: nowrap; /* Permite que se adapte en pantallas pequeñas */
+    }
+
+    .llave {
+        height: 180px; /* Tamaño de la imagen */
+        flex-shrink: 0;
+        display: block; /* Impide que se muevan hacia arriba */
+    }
+
+    .llave-izquierda {
+        transform: translateX(80px) /* Mueve la imagen hacia la derecha */
+    }
+
+    .llave-derecha {
+        transform: scaleX(-1) translateX(80px); /* Invierte la imagen y la mueve hacia la izquierda */
     }
 
     /* Card de descripción */
 
     .description-card {
         max-width: 1000px; /* Maximo ancho del card */
-        margin: 2rem auto; /* Ancho de margen */
-        background-color: var(--color-blanco); /* Color del div */
+        margin: 0; /* Ancho de margen */
+        /* background-color: var(--color-blanco); */ /* Color del div */
         padding: 2rem; /* Espacio al elemento top */
         border-radius: 10px; /* Redondea el borde del card */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra del borde */
+        /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */ /* Sombra del borde */
+        opacity: 1;
     }
 
     .description-card p {
-        text-align: center; /* Centra el texto p dentro del card */
-        color: var(--color-azul-energy); /* Color del texto */
+        text-align: justify; /* Centra el texto p dentro del card */
+        color: var(--color-blanco-mixto); /* Color del texto */
         font-size: 1.05rem; /* Tamaño de la fuente p */
     }
 
@@ -288,10 +349,16 @@
 
     /* ¿Qué significa esto? */
 
+    .benefits-wrapper {
+        background-color: var(--color-blanco);
+    }
+
     .benefits {
         padding: 4rem 2rem; /* Espacios Arriba Izquierda */
         max-width: 1200px; /* Maximo ancho */
         margin: 0 auto; /* Margen automático */
+        background-color: var(--color-blanco);
+        width: 100%;
     }
 
     .benefits h2 {
@@ -309,17 +376,17 @@
     }
 
     .benefit-card {
-        background-color: var(--color-blanco); /* Color del card */
+        /* background-color: var(--color-blanco); */ /* Color del card */
         padding: 2rem; /* Espacio interno dentro del elemento */
         border-radius: 10px; /* Redondea el borden del card */
         text-align: center; /* Centra el texto y los iconos */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra del borde */
-        transition: transform 0.3s, box-shadow 0.3s; /* Animacion elementos */
+        /* box-shadow: 0 2px 10px rgba(0,0,0,0.8); */ /* Sombra del borde */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacion elementos */
     }
 
     .benefit-card:hover {
-        transform: translateY(-5px); /* Movimiento hacia arriba al colocar el cursor */
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Elimina la sombra al hacer la animación */
+        transform: scale(1.25); /* Animacion de aumento de tamaño */ /* translateY(-5px); */ /* Movimiento hacia arriba al colocar el cursor */
+        /* box-shadow: 0 4px 20px rgba(0,0,0,0.15); */ /* Elimina la sombra al hacer la animación */
     }
 
     .benefit-icon {
@@ -359,7 +426,7 @@
 
     .solutions {
         padding: 4rem 2rem; /* Espacio interior */
-        background-color: var(--color-blanco); /* Color de fondo de la sección */
+        background-color: var(--color-blanco-mixto); /* Color de fondo de la sección */
     }
 
     .solutions h2 {
@@ -389,6 +456,11 @@
         padding: 2.5rem; /* Espacio interior de los cards */
         border-radius: 10px; /* Borde redondeado de los cards */
         box-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra de card */
+
+        display: flex;           /* Hacemos flex para organizar contenido */
+        flex-direction: column;  /* Columna vertical */
+        justify-content: space-between; /* Espacio entre contenido y botón */
+        height: 100%;            /* Para que todas las cards tengan igual altura */
     }
 
     .solution-icon {
@@ -422,7 +494,7 @@
 
     .about {
         padding: 4rem 2rem; /* Espacio inferior */
-        background-color: var(--color-blanco-ostion);
+        background-color: var(--color-blanco); /* Color de section */
     }
 
     .about h2 {
@@ -445,12 +517,15 @@
         display: grid; /* Convierte el contenedor de cuadrícula para diseños en filas y columnas */
         grid-template-columns: 1fr 1fr; /* Crea dos columnas */
         gap: 3rem; /* Espacio entre las columnas */
-        align-items: start; /* Coloca el interlineado al inicio */
+        align-items: center; /* Centra verticalmente las columnas */
     }
 
     .about-text {
         color: var(--color-azul-energy); /* Color del texto about */
         line-height: 1.8; /* Espacio vertical entre lineas */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .about-cards {
@@ -499,7 +574,7 @@
 
     .clients {
         padding: 4rem 2rem; /* Espacio interior */
-        background-color: var(--color-blanco); /* Color de fondo */
+        background-color: var(--color-blanco-mixto); /* Color de fondo */
     }
 
     .clients h2 {
@@ -556,6 +631,93 @@
         color: var(--color-azul-energy); /* Color del texto */
         font-weight: bold; /* Ancho del font */
         font-size: 1.05rem; /* Tamaño de la fuente */
+    }
+
+    /* ----- Logos aliados ----- */
+    .aliados-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .aliados-logo:hover {
+        transform: translateY(-5px);
+    }
+
+    .aliados-logo-image {
+        max-width: 120px;
+        max-height: 80px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        opacity: 1;
+        transition: transform 0.3s ease;
+    }
+
+    .aliados-logo-image:hover {
+        transform: scale(1.1);
+    }
+
+    /* ----- Slider infinito ----- */
+    .slider {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 3rem auto;
+        overflow: hidden;
+    }
+
+    .slider .slide-track {
+        display: flex;
+        animation: scroll 40s linear infinite;
+        width: calc(100% * 2);
+    }
+
+    .slider-left .slide-track {
+        animation-name: scroll-left;
+    }
+
+    .slider-right .slide-track {
+        animation-name: scroll-right;
+    }
+
+    .slider .slide {
+        flex: 0 0 auto;
+        width: 14%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .slider .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Pausar animación al hover */
+    .slider:hover .slide-track {
+        animation-play-state: paused;
+    }
+
+    /* Animaciones */
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes scroll-right {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
     }
 
     /* Blog */
