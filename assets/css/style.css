@@ -254,7 +254,7 @@
         object-fit: cover; /* hace que el video cubra todo el área */
         z-index: 0; /* lo manda al fondo */
         opacity: 1; /* ajusta la transparencia del video */
-        background-color: var(--color-blanco);
+        background-color: var(--color-blanco); /* Color blanco de fondo */
     }
 
     /* El contenido encima del video */
@@ -298,8 +298,6 @@
         max-width: 900px; /* Maximo ancho */
         margin: 2rem auto; /* Ancho de margen */
     }
-
-    /* Llaves */
 
     .description-wrapper {
         display: flex; /* Display en flex */

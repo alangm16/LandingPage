@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/soluciones.css">
     <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="assets/img/LOGOTIPO/LogosSF/klammer_icono.png">
 </head>
 <body>
     <!-- Header -->
@@ -35,42 +36,23 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="rpa-hero">
-        <div class="rpa-hero-content">
-            <div class="rpa-hero-left">
-                <div class="rpa-logo">RPA</div>
-                <div class="rpa-icons-list">
-                    <div class="rpa-icon-item">
-                        <div class="rpa-icon-badge">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <span>Aminora</span>
-                    </div>
-                    <div class="rpa-icon-item">
-                        <div class="rpa-icon-badge">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-                        <span>Eficaz</span>
-                    </div>
-                </div>
-            </div>
-            <div class="rpa-hero-right">
-                <h1>Robotic Process Automation</h1>
-                <p class="subtitle">Un robot aprende, ejecuta sin errores y <span class="highlight">(automatiza cualquier proceso)</span>.</p>
+    <section id="rpa-inicio" class="rpa-hero">
+        <!-- Video de fondo para el Hero -->
+        <video id="rpa-video" autoplay muted loop playsinline class="rpa-hero-video">
+            <source src="assets/video/rpa.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        
+        <h1>Automatización Robótica de Procesos</h1>
+
+        <div class="rpa-description-wrapper">
+            <div class="rpa-description-card">
                 <p>
-                    ¿Estás listo para ir más allá de la eficiencia? Automatiza los procesos de tu negocio replicando las acciones de un ser humano por medio de un robot.
+                    Combinación de HUMANOS y ROBOTS para lograr cosas que van más allá de la CAPACIDAD HUMANA.
                 </p>
-                <div class="rpa-hero-visual">
-                    <div class="rpa-visual-icon">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                </div>
-                <div class="press-enter">press enter|</div>
-                <div class="automation-anywhere-logo">
-                    <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 1.2rem;">AUTOMATION ANYWHERE</span>
-                </div>
             </div>
         </div>
+
     </section>
 
     <!-- Conoce Automation Anywhere -->
@@ -252,6 +234,7 @@
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
                     <li><a href="index.html#soluciones">Soluciones</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
@@ -311,6 +294,9 @@
             
             lastScroll = currentScroll;
         });
+
+        const video = document.getElementById('rpa-video');
+        video.playbackRate = 0.9; // ~la mitad de velocidad (más lento)
     </script>
 </body>
 </html>

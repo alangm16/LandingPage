@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/soluciones.css">
     <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="assets/img/LOGOTIPO/LogosSF/klammer_icono.png">
 </head>
 <body>
     <!-- Header -->
@@ -35,16 +36,20 @@
     </header>
 
     <!-- Hero -->
-    <section class="dev-hero">
-        <div class="dev-hero-content">
-            <div class="dev-hero-text">
-                <h1>Aplicaciones <span class="highlight-blue">INNOVADORAS</span> que generan valor</h1>
-                <p class="subtitle">Construimos soluciones que mejoran tu operación diaria y potencian tu negocio.</p>
-                <p>En <strong>Klammer</strong> contamos con el mejor equipo para llevar a cabo el desarrollo a medida de cualquiera de tus necesidades de software.</p>
-                <a href="#contacto" class="btn-dev">Contáctanos</a>
-            </div>
-            <div class="dev-hero-image">
-                <img src="img/desarrollo_software_hero.png" alt="Desarrollo de Software Klammer">
+    <section id="dev-inicio" class="dev-hero">
+        <!-- Video de fondo para el Hero -->
+        <video id="ds-video" autoplay muted loop playsinline class="dev-hero-video">
+            <source src="assets/video/ds.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+        <h1>Desarrollo de Software</h1>
+
+        <div class="dev-description-wrapper">
+            <div class="dev-description-card">
+                <p>
+                    Aplicaciones innovadoras que generan valor.
+                </p>
             </div>
         </div>
     </section>
@@ -113,6 +118,7 @@
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
                     <li><a href="index.html#soluciones">Soluciones</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
@@ -172,6 +178,9 @@
             
             lastScroll = currentScroll;
         });
+
+        const video = document.getElementById('dev-video');
+        video.playbackRate = 0.9; // ~la mitad de velocidad (más lento)
     </script>
 </body>
 </html>

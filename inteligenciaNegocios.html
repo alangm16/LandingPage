@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/soluciones.css">
     <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
-    
+    <link rel="icon" type="image/png" href="assets/img/LOGOTIPO/LogosSF/klammer_icono.png">
 </head>
 <body>
     <!-- Header -->
@@ -36,11 +36,27 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bi-hero">
-        <div class="bi-hero-content">
-            <div class="bi-hero-text">
-                <h1>Inteligencia de Negocios</h1>
-                <p class="subtitle">The key to success is making the best decisions.</p>
+    <section id="bi-inicio" class="bi-hero">
+        <!-- Video de fondo para el Hero -->
+        <video id="bi-video" autoplay muted loop playsinline class="bi-hero-video">
+            <source src="assets/video/bi.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+        <h1>Inteligencia de Negocios</h1>
+
+        <div class="bi-description-wrapper">
+            <div class="bi-description-card">
+                <p>
+                    Los datos son el nuevo lenguaje de los negocios.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #ffffff;">
+         <div class="bi-description-wrapper">
+            <div class="bi-description-card">
                 <p>
                     Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa con el fin de lograr <strong>ventajas competitivas</strong>.
                 </p>
@@ -48,31 +64,32 @@
                     No es lo mismo tener datos a tener información que se transforma en conocimiento.
                 </p>
             </div>
-            <div class="bi-hero-card">
-                <div class="bi-icons">
-                    <div class="bi-icon-item">
-                        <div class="bi-icon-badge">
-                            <i class="fa-solid fa-gauge-high"></i>
-                        </div>
-                        <span>KPI</span>
+        </div>
+
+        <div class="bi-hero-card">
+            <div class="bi-icons">
+                <div class="bi-icon-item">
+                    <div class="bi-icon-badge">
+                        <i class="fa-solid fa-gauge-high"></i>
                     </div>
-                    <div class="bi-icon-item">
-                        <div class="bi-icon-badge">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <span>Graphs</span>
+                    <span>KPI</span>
+                </div>
+                <div class="bi-icon-item">
+                    <div class="bi-icon-badge">
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
+                    <span>Graphs</span>
                 </div>
-                <p>
-                    Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa con el fin de lograr <span class="highlight">ventajas competitivas</span>.
-                </p>
-                <p>
-                    No es lo mismo tener datos a tener información que se transforma en conocimiento.
-                </p>
-                <div class="qlik-partner">
-                    <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 0.9rem;">Powered by</span><br>
-                    <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 1.2rem;">Qlik Partner</span>
-                </div>
+            </div>
+            <p>
+                Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa con el fin de lograr <span class="highlight">ventajas competitivas</span>.
+            </p>
+            <p>
+                No es lo mismo tener datos a tener información que se transforma en conocimiento.
+            </p>
+            <div class="qlik-partner">
+                <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 0.9rem;">Powered by</span><br>
+                <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 1.2rem;">Qlik Partner</span>
             </div>
         </div>
     </section>
@@ -203,6 +220,7 @@
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
                     <li><a href="index.html#soluciones">Soluciones</a></li>
                     <li><a href="index.html#nosotros">Nosotros</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
@@ -262,6 +280,9 @@
             
             lastScroll = currentScroll;
         });
+
+        const video = document.getElementById('bi-video');
+        video.playbackRate = 0.9; // ~la mitad de velocidad (más lento)
     </script>
 </body>
 </html>
