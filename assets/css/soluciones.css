@@ -62,33 +62,33 @@
     /* Bi Hero Section */
 
     .bi-hero {
-        position: relative; /* Posicion relativa del hero para el video */
-        margin-top: 80px; /* Espacio entre el top */
-        padding: 1.5rem 2rem; /* Espacio interno dentro del elemento */
-        text-align: center; /* Centra el texto */
-        background-color: var(--color-blanco); /* Color de fondo */
-        overflow: hidden; /* Para que no salte a otro section */
+        position: relative;
+        margin-top: 80px;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background-color: var(--color-blanco);
+        overflow: hidden;
         height: 527px;
     }
 
     .bi-hero-video {
-        position: absolute; /* Posicion absoluta del video */
-        top: 0; /* 0 margen superior */
-        left: 0; /* 0 margen izquierdo */
-        width: 100%; /* 100% del ancho */
-        height: 100%; /* 100% de altura */
-        object-fit: cover; /* hace que el video cubra todo el área */
-        z-index: 0; /* lo manda al fondo */
-        opacity: 1; /* ajusta la transparencia del video */
-        background-color: var(--color-blanco); /* Color blanco de fondo */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1;
+        background-color: var(--color-blanco);
     }
 
     /* El contenido encima del video */
     .bi-hero h1,
     .bi-hero p,
-    .bi-hero .description-card {
+    .bi-hero .bi-description-card {
         position: relative;
-        z-index: 1; /* asegura que esté delante del video */
+        z-index: 1;
     }
 
     /* Opcional: para mejorar la legibilidad del texto */
@@ -99,160 +99,51 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.4); /* capa semitransparente sobre el video */
+        background: rgba(255, 255, 255, 0.4);
         z-index: 0;
     }
 
     .bi-hero h1 {
-        font-size: 3rem; /* Tamaño de fuente para h1 */
-        color: var(--color-blanco); /* Color de fuente h1 */
-        margin-bottom: 1rem; /* Espacio de margen en la parte inferior del elemento */
-        line-height: 1.2; /* Distancia vertical entre lineas de texto dentro del párrafo */
-        max-width: 1200px; /* Genera el maximo ancho del hero */
-        margin-left: auto; /* Genera automaticamente el margen a la izquierda */
-        margin-right: auto; /* Genera automaticamente el margen a la derecha */
-    }
-
-    .bi-hero h1 .highlight-yellow {
-        color: var(--color-amarillo-pure); /* Cambia el color de letra de la palabra Klammer */
-        font-family: 'Calling Code', 'Helvetica', sans-serif; /* Cambia la fuente de la palabra Klammer */
-    }
-
-    .bi-hero p {
-        font-size: 1.1rem; /* Tamaño de fuente de p en hero */
-        color: var(--color-blanco); /* Color de fuente p */
-        max-width: 900px; /* Maximo ancho */
-        margin: 2rem auto; /* Ancho de margen */
+        font-size: 3rem;
+        color: var(--color-blanco);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .bi-description-wrapper {
         margin-top: 330px;
-        display: flex; /* Display en flex */
-        align-items: end; /* Centra verticalmente las llaves con el texto */
-        justify-content: center; /* Centra el grupo en el hero */
-        gap: 0; /* Espacio entre las columnas */
-        position: relative; /* Posicion relativa */
-        z-index: 1; /* Asegura que este sobre el video */
-        flex-wrap: nowrap; /* Permite que se adapte en pantallas pequeñas */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
     }
 
     .bi-description-card {
-        max-width: 1000px; /* Maximo ancho del card */
-        margin: 0; /* Ancho de margen */
-        /* background-color: var(--color-blanco); */ /* Color del div */
-        padding: 2rem; /* Espacio al elemento top */
-        border-radius: 10px; /* Redondea el borde del card */
-        /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */ /* Sombra del borde */
+        max-width: 1000px;
+        margin: 0;
+        padding: 2rem;
+        border-radius: 10px;
         opacity: 1;
     }
 
     .bi-description-card p {
-        text-align: center; /* Centra el texto p dentro del card */
-        color: var(--color-blanco-mixto); /* Color del texto */
-        font-size: 1.05rem; /* Tamaño de la fuente p */
-    }
-
-    .bi-description-card strong {
-        font-weight: bold; /* Fuente bold para strong */
-    }
-
-    /* .bi-hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    .bi-hero-text h1 {
-        font-size: 3rem;
-        color: var(--color-amarillo-pure);
-        margin-bottom: 1rem;
-        line-height: 1.2;
-    }
-
-    .bi-hero-text .subtitle {
+        text-align: center;
+        color: var(--color-blanco-mixto);
         font-size: 1.3rem;
-        color: var(--color-blanco);
-        margin-bottom: 2rem;
         font-style: italic;
     }
 
-    .bi-hero-text p {
-        color: var(--color-blanco);
-        font-size: 1.05rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-    }
-
-    .bi-hero-card {
-        background-color: rgba(255, 255, 255, 0.95);
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .bi-hero-card p {
-        color: var(--color-azul-energy);
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
-    }
-
-    .bi-hero-card .highlight {
-        color: #e74c3c;
-        font-weight: bold;
-    }
-
-    .bi-icons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        justify-content: center;
-    }
-
-    .bi-icon-item {
-        text-align: center;
-    }
-
-    .bi-icon-badge {
-        width: 60px;
-        height: 60px;
-        background-color: var(--color-amarillo-pure);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 0.5rem;
-        font-size: 1.8rem;
-    }
-
-    .bi-icon-item span {
-        font-size: 0.75rem;
-        color: var(--color-azul-energy);
-        font-weight: bold;
-    }
-
-    .qlik-partner {
-        text-align: right;
-        margin-top: 1rem;
-    }
-
-    .qlik-partner img {
-        height: 40px;
-        filter: brightness(0) invert(1);
-    } */
-
-    /* Sección: ¿Qué es BI? */
-    .bi-intro {
+    /* Sección: ¿Qué es? y Nosotros combinadas */
+    .bi-que-es-nosotros {
         padding: 4rem 2rem;
         background-color: var(--color-blanco-mixto);
     }
 
-    .bi-intro-content {
+    .bi-content-wrapper {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
@@ -261,60 +152,163 @@
         align-items: center;
     }
 
-    .bi-intro-image {
+    .bi-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bi-left-column h1 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 0;
         text-align: center;
     }
 
-    .bi-intro-image img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    .bi-card-spacing {
+        margin-top: 0.5rem;
     }
 
-    .bi-intro-text h2 {
-        color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 1.5rem;
+    .bi-right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
     }
 
-    .bi-intro-text p {
+    .bi-chart {
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--color-blanco-mixto);
+        padding: 2rem;
+        /* border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
+    }
+
+    .bi-info-card {
+        background-color: var(--color-blanco-mixto);
+        padding: 1.5rem;
+        /* border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); */
+    }
+
+    .bi-info-card p {
         color: var(--color-azul-energy);
         font-size: 1.05rem;
         line-height: 1.8;
-        margin-bottom: 1rem;
+        margin: 0;
+        text-align: left;
     }
+
+    /* Animación barras */
+
+    .bar {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    /* Línea de tendencia preparada */
+    .line-trend {
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+    }
+
+    /* Puntos preparados */
+    .line-point {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+    }
+
+    /* Animación activada */
+    .animate .bar {
+        animation: growBar 1s ease-out forwards;
+    }
+
+    .animate .bar:nth-of-type(1) { animation-delay: 0.2s; }
+    .animate .bar:nth-of-type(2) { animation-delay: 0.4s; }
+    .animate .bar:nth-of-type(3) { animation-delay: 0.6s; }
+    .animate .bar:nth-of-type(4) { animation-delay: 0.8s; }
+
+    .animate .line-trend {
+        animation: drawLine 1.5s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .animate .line-point:nth-of-type(1) { animation: showPoint 0.5s ease forwards; animation-delay: 2.5s; }
+    .animate .line-point:nth-of-type(2) { animation: showPoint 0.5s ease forwards; animation-delay: 2.7s; }
+    .animate .line-point:nth-of-type(3) { animation: showPoint 0.5s ease forwards; animation-delay: 2.9s; }
+    .animate .line-point:nth-of-type(4) { animation: showPoint 0.5s ease forwards; animation-delay: 3.1s; }
+
+    @keyframes growBar {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+    }
+
+    @keyframes drawLine {
+        from { stroke-dashoffset: 600; }
+        to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes showPoint {
+        from { opacity: 0; transform: scale(0); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
 
     /* Sección: ¿Por qué BI? */
     .why-bi {
         padding: 4rem 2rem;
-        background: var(--color-blanco);
-        color: white;
+        background-color: var(--color-blanco);
     }
 
     .why-bi h2 {
         text-align: center;
-        font-size: 2.5rem;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
         margin-bottom: 3rem;
-        color: white;
     }
 
     .why-bi-grid {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
     }
 
     .why-bi-item {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 1.5rem 2rem;
+        background-color: var(--color-blanco-ostion);
+        padding: 2rem;
         border-radius: 10px;
-        border-left: 4px solid white;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--color-amarillo-pure);
+    }
+
+    .why-bi-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .why-bi-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--color-amarillo-pure);
     }
 
     .why-bi-item h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 
     /* Sección: ¿Cómo funciona? */
@@ -334,31 +328,45 @@
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
     }
 
     .how-card {
-        background-color: #00d4aa;
+        background-color: var(--color-blanco);
         padding: 2.5rem;
         border-radius: 10px;
         text-align: center;
-        color: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .how-card:hover {
+        transform: translateY(-5px);
     }
 
     .how-card-icon {
         width: 80px;
         height: 80px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin: 0 auto 1.5rem;
-        font-size: 3rem;
+        font-size: 2.5rem;
+        color: var(--color-amarillo-pure);
     }
 
     .how-card h3 {
-        font-size: 1.5rem;
+        color: var(--color-azul-energy);
+        font-size: 1.3rem;
         margin-bottom: 1rem;
+        font-weight: bold;
     }
 
     .how-card p {
+        color: var(--color-azul-energy);
         font-size: 0.95rem;
         line-height: 1.6;
     }
@@ -371,94 +379,106 @@
 
     .bi-benefits h2 {
         text-align: center;
-        color: #00d4aa;
-        font-size: 2.5rem;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
         margin-bottom: 3rem;
     }
 
     .bi-benefits-grid {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
 
     .bi-benefit-card {
-        text-align: center;
+        background-color: var(--color-blanco-ostion);
         padding: 2rem;
-        border: 2px solid #e0e0e0;
         border-radius: 10px;
-        transition: all 0.3s ease;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .bi-benefit-card:hover {
-        border-color: #00d4aa;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0,212,170,0.2);
+        transform: scale(1.05);
     }
 
     .bi-benefit-icon {
         width: 70px;
         height: 70px;
         margin: 0 auto 1rem;
-        font-size: 2.5rem;
-        color: #00d4aa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--color-amarillo-pure);
     }
 
     .bi-benefit-card h3 {
         color: var(--color-azul-energy);
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
     }
 
-    /* CTA Final */
-    .bi-cta {
+    /* Sección: CTA Final */
+    .bi-cta-final {
         padding: 4rem 2rem;
-        background: var(--color-blanco-mixto);
+        background-color: var(--color-blanco-ostion);
         text-align: center;
     }
 
-    .bi-cta h2 {
-        color: white;
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .bi-cta p {
-        color: white;
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        max-width: 700px;
+    .bi-cta-final h2 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .btn-cta-large {
-        display: inline-block;
-        background-color: #00d4aa;
-        color: white;
-        padding: 1.2rem 3rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        transition: all 0.3s;
-        border: 2px solid #00d4aa;
+    .bi-cta-final p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto 2rem;
     }
 
-    .btn-cta-large:hover {
-        background-color: transparent;
-        border-color: white;
-        color: white;
+    .cta-button {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--color-azul-energy);
+        color: var(--color-blanco);
+        padding: 1rem 2.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.05rem;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-azul-deep);
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-        .bi-hero-content,
-        .bi-intro-content {
+        .bi-content-wrapper {
             grid-template-columns: 1fr;
             gap: 2rem;
+        }
+
+        .bi-left-column h1 {
+            text-align: center;
+        }
+
+        .bi-info-card p {
+            text-align: center;
         }
 
         .how-it-works-grid {
@@ -466,6 +486,10 @@
         }
 
         .bi-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why-bi-grid {
             grid-template-columns: 1fr;
         }
     }
@@ -473,76 +497,121 @@
     @media (max-width: 768px) {
         .bi-hero {
             padding: 3rem 1.5rem;
+            height: 450px;
         }
 
-        .bi-hero-text h1 {
+        .bi-description-wrapper {
+            margin-top: 280px;
+        }
+
+        .bi-hero h1 {
             font-size: 2rem;
         }
 
-        .bi-hero-text .subtitle {
+        .bi-description-card p {
             font-size: 1.1rem;
         }
 
-        .why-bi h2,
-        .bi-benefits h2 {
-            font-size: 2rem;
+        .bi-que-es-nosotros,
+        .why-bi,
+        .how-it-works,
+        .bi-benefits,
+        .bi-cta-final {
+            padding: 3rem 1.5rem;
         }
 
-        .how-it-works h2,
-        .bi-intro-text h2 {
+        .bi-left-column h1,
+        .bi-cta-final h2,
+        .why-bi h2,
+        .bi-benefits h2,
+        .how-it-works h2 {
             font-size: 1.8rem;
+        }
+
+        .bi-info-card p,
+        .bi-cta-final p {
+            font-size: 1rem;
+        }
+
+        .bi-benefits-grid,
+        .why-bi-grid {
+            grid-template-columns: 1fr;
         }
     }
 
     @media (max-width: 480px) {
-        .bi-hero-text h1 {
+        .bi-hero {
+            height: 400px;
+        }
+
+        .bi-description-wrapper {
+            margin-top: 250px;
+        }
+
+        .bi-hero h1 {
             font-size: 1.6rem;
         }
 
-        .bi-icons {
-            flex-direction: column;
-            gap: 1rem;
+        .bi-description-card p {
+            font-size: 1rem;
         }
 
-        .bi-icon-badge {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
+        .bi-que-es-nosotros,
+        .why-bi,
+        .how-it-works,
+        .bi-benefits,
+        .bi-cta-final {
+            padding: 2.5rem 1.2rem;
+        }
+
+        .how-card,
+        .bi-benefit-card,
+        .why-bi-item {
+            padding: 1.5rem;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .bi-chart {
+            padding: 1.5rem;
         }
     }
 
     /* Estilos específicos para la página de RPA */
 
-    /* rpa Hero Section */
+    /* RPA Hero Section */
 
     .rpa-hero {
-        position: relative; /* Posicion relativa del hero para el video */
-        margin-top: 80px; /* Espacio entre el top */
-        padding: 1.5rem 2rem; /* Espacio interno dentro del elemento */
-        text-align: center; /* Centra el texto */
-        background-color: var(--color-blanco); /* Color de fondo */
-        overflow: hidden; /* Para que no salte a otro section */
+        position: relative;
+        margin-top: 80px;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background-color: var(--color-blanco);
+        overflow: hidden;
         height: 527px;
     }
 
     .rpa-hero-video {
-        position: absolute; /* Posicion absoluta del video */
-        top: 0; /* 0 margen superior */
-        left: 0; /* 0 margen izquierdo */
-        width: 100%; /* 100% del ancho */
-        height: 100%; /* 100% de altura */
-        object-fit: cover; /* hace que el video cubra todo el área */
-        z-index: 0; /* lo manda al fondo */
-        opacity: 1; /* ajusta la transparencia del video */
-        background-color: var(--color-blanco); /* Color blanco de fondo */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1;
+        background-color: var(--color-blanco);
     }
 
     /* El contenido encima del video */
     .rpa-hero h1,
     .rpa-hero p,
-    .rpa-hero .description-card {
+    .rpa-hero .rpa-description-card {
         position: relative;
-        z-index: 1; /* asegura que esté delante del video */
+        z-index: 1;
     }
 
     /* Opcional: para mejorar la legibilidad del texto */
@@ -553,205 +622,51 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.4); /* capa semitransparente sobre el video */
+        background: rgba(255, 255, 255, 0.4);
         z-index: 0;
     }
 
     .rpa-hero h1 {
-        font-size: 3rem; /* Tamaño de fuente para h1 */
-        color: var(--color-blanco); /* Color de fuente h1 */
-        margin-bottom: 1rem; /* Espacio de margen en la parte inferior del elemento */
-        line-height: 1.2; /* Distancia vertical entre lineas de texto dentro del párrafo */
-        max-width: 1200px; /* Genera el maximo ancho del hero */
-        margin-left: auto; /* Genera automaticamente el margen a la izquierda */
-        margin-right: auto; /* Genera automaticamente el margen a la derecha */
-    }
-
-    .rpa-hero h1 .highlight-yellow {
-        color: var(--color-amarillo-pure); /* Cambia el color de letra de la palabra Klammer */
-        font-family: 'Calling Code', 'Helvetica', sans-serif; /* Cambia la fuente de la palabra Klammer */
-    }
-
-    .rpa-hero p {
-        font-size: 1.1rem; /* Tamaño de fuente de p en hero */
-        color: var(--color-blanco); /* Color de fuente p */
-        max-width: 900px; /* Maximo ancho */
-        margin: 2rem auto; /* Ancho de margen */
+        font-size: 3rem;
+        color: var(--color-blanco);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .rpa-description-wrapper {
         margin-top: 330px;
-        display: flex; /* Display en flex */
-        align-items: end; /* Centra verticalmente las llaves con el texto */
-        justify-content: center; /* Centra el grupo en el hero */
-        gap: 0; /* Espacio entre las columnas */
-        position: relative; /* Posicion relativa */
-        z-index: 1; /* Asegura que este sobre el video */
-        flex-wrap: nowrap; /* Permite que se adapte en pantallas pequeñas */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
     }
 
     .rpa-description-card {
-        max-width: 1000px; /* Maximo ancho del card */
-        margin: 0; /* Ancho de margen */
-        /* background-color: var(--color-blanco); */ /* Color del div */
-        padding: 2rem; /* Espacio al elemento top */
-        border-radius: 10px; /* Redondea el borde del card */
-        /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */ /* Sombra del borde */
+        max-width: 1000px;
+        margin: 0;
+        padding: 2rem;
+        border-radius: 10px;
         opacity: 1;
     }
 
     .rpa-description-card p {
-        text-align: center; /* Centra el texto p dentro del card */
-        color: var(--color-blanco-mixto); /* Color del texto */
-        font-size: 1.05rem; /* Tamaño de la fuente p */
-    }
-
-    .rpa-description-card strong {
-        font-weight: bold; /* Fuente bold para strong */
-    }
-
-    .rpa-hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    .rpa-hero-left {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-
-    .rpa-logo {
-        width: 150px;
-        height: 150px;
-        background-color: var(--color-azul-energy);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
-        color: var(--color-amarillo-pure);
-        font-weight: bold;
-        border: 3px solid var(--color-azul-deep);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .rpa-icons-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .rpa-icon-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
+        color: var(--color-blanco-mixto);
+        font-size: 1.3rem;
+        font-style: italic;
     }
 
-    .rpa-icon-badge {
-        width: 80px;
-        height: 80px;
-        background-color: var(--color-azul-energy);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-        font-size: 2.5rem;
-        color: var(--color-amarillo-pure);
-    }
-
-    .rpa-icon-item span {
-        font-size: 1rem;
-        color: var(--color-azul-energy);
-        font-weight: bold;
-    }
-
-    .rpa-hero-right {
-        padding-left: 2rem;
-    }
-
-    .rpa-hero-right h1 {
-        font-size: 3rem;
-        color: var(--color-azul-energy);
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-
-    .rpa-hero-right .subtitle {
-        font-size: 1.2rem;
-        color: var(--color-azul-energy);
-        margin-bottom: 1.5rem;
-    }
-
-    .rpa-hero-right p {
-        color: var(--color-azul-energy);
-        font-size: 1.05rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-    }
-
-    .rpa-hero-right .highlight {
-        color: var(--color-azul-energy);
-        font-weight: bold;
-    }
-
-    .rpa-hero-visual {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 2rem;
-        padding: 1.5rem;
-        background-color: rgba(31, 69, 137, 0.05);
-        border-radius: 10px;
-    }
-
-    .rpa-visual-icon {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-    }
-
-    .press-enter {
-        background-color: white;
-        border: 2px dashed var(--color-azul-energy);
-        padding: 0.5rem 1.5rem;
-        border-radius: 5px;
-        color: var(--color-azul-energy);
-        font-family: 'Courier New', monospace;
-        font-size: 1.1rem;
-        margin-top: 1rem;
-        display: inline-block;
-    }
-
-    .automation-anywhere-logo {
-        text-align: right;
-        margin-top: 1rem;
-    }
-
-    .automation-anywhere-logo img {
-        height: 50px;
-    }
-
-    /* Sección: Conoce Automation Anywhere */
-    .rpa-intro {
+    /* Sección: ¿Qué es? */
+    .rpa-que-es-nosotros {
         padding: 4rem 2rem;
-        background: linear-gradient(135deg, #005f4a 0%, #00a88e 100%);
-        color: white;
+        background-color: var(--color-blanco-mixto);
     }
 
-    .rpa-intro-content {
+    .rpa-content-wrapper {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
@@ -760,257 +675,218 @@
         align-items: center;
     }
 
-    .rpa-intro-image {
-        text-align: center;
-    }
-
-    .rpa-intro-robot {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 8rem;
-    }
-
-    .rpa-intro-text h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #00d4aa;
-    }
-
-    .rpa-intro-text p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 1rem;
-    }
-
-    .rpa-cta-button {
-        margin-top: 2rem;
-    }
-
-    .btn-rpa {
-        display: inline-block;
-        background-color: #00d4aa;
-        color: white;
-        padding: 1rem 2.5rem;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 1.1rem;
-        transition: all 0.3s;
-        border: 2px solid #00d4aa;
-    }
-
-    .btn-rpa:hover {
-        background-color: transparent;
-        border-color: white;
-    }
-
-    .rpa-formula {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .rpa-formula-item {
-        text-align: center;
-    }
-
-    .rpa-formula-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-    }
-
-    .rpa-formula-text {
-        font-size: 0.95rem;
-        font-weight: bold;
-    }
-
-    .rpa-formula-operator {
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #00d4aa;
-    }
-
-    .rpa-tagline {
-        text-align: center;
-        font-size: 1.5rem;
-        font-style: italic;
-        margin-top: 2rem;
-        color: #00d4aa;
-    }
-
-    /* Sección: Arquitectura RPA */
-    .rpa-architecture {
-        padding: 4rem 2rem;
-        background: linear-gradient(135deg, #00322a 0%, #005f4a 100%);
-        color: white;
-    }
-
-    .rpa-architecture h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #00d4aa;
-    }
-
-    .rpa-architecture-subtitle {
-        text-align: center;
-        font-size: 1.2rem;
-        margin-bottom: 3rem;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .rpa-architecture-content {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .rpa-architecture-text {
-        font-size: 1.05rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-    }
-
-    .rpa-architecture-visual {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 3rem;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .rpa-bot-item {
-        text-align: center;
-    }
-
-    .rpa-bot-icon {
-        width: 120px;
-        height: 120px;
-        background-color: rgba(0, 212, 170, 0.2);
-        border: 3px solid #00d4aa;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        font-size: 3rem;
-    }
-
-    .rpa-bot-label {
-        font-size: 0.9rem;
-        color: #00d4aa;
-        font-weight: bold;
-    }
-
-    .rpa-database-center {
-        position: relative;
-    }
-
-    .rpa-database-icon {
-        width: 150px;
-        height: 150px;
-        background: linear-gradient(135deg, #00d4aa 0%, #00a88e 100%);
-        border-radius: 20px;
+    .rpa-left-column {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .rpa-left-column h1 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .rpa-card-spacing {
+        margin-top: 0.5rem;
+    }
+
+    .rpa-right-column {
+        display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 4rem;
-        margin: 0 auto;
-        box-shadow: 0 10px 30px rgba(0,212,170,0.3);
+        padding-top: 2rem;
     }
 
-    .rpa-plus-icon {
-        font-size: 3rem;
-        color: #00d4aa;
+    .rpa-icons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        max-width: 450px;
     }
 
-    /* Sección: La fuerza de trabajo digital */
-    .rpa-workforce {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+    .rpa-icon-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        opacity: 0;
+        transform: translateX(50px);
     }
 
-    .rpa-workforce h2 {
-        text-align: center;
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .rpa-workforce h2 .highlight-green {
-        color: #00d4aa;
-    }
-
-    .rpa-workforce-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .rpa-workforce-icon-main {
-        width: 100px;
-        height: 100px;
-        background-color: #00d4aa;
+    .rpa-icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-amarillo-pure);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 2rem auto;
-        font-size: 3.5rem;
-        color: white;
-    }
-
-    .rpa-workforce-title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         color: var(--color-azul-energy);
-        margin-bottom: 0.5rem;
+        flex-shrink: 0;
     }
 
-    .rpa-workforce-subtitle {
-        font-size: 1.3rem;
-        color: #00d4aa;
+    .rpa-icon-item span {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
         font-weight: bold;
-        margin-bottom: 2rem;
     }
 
-    .rpa-workforce-list {
-        text-align: left;
-        max-width: 500px;
-        margin: 0 auto;
+    .rpa-info-card {
+        background-color: var(--color-blanco-mixto);
+        padding: 1.5rem;
     }
 
-    .rpa-workforce-list li {
+    .rpa-info-card p {
         color: var(--color-azul-energy);
         font-size: 1.05rem;
-        margin-bottom: 0.8rem;
-        padding-left: 1.5rem;
-        position: relative;
+        line-height: 1.8;
+        margin: 0;
+        text-align: left;
     }
 
-    .rpa-workforce-list li:before {
-        content: "-";
-        position: absolute;
-        left: 0;
-        color: #00d4aa;
+    /* Animación iconos */
+    .animate .rpa-icon-item:nth-of-type(1) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .animate .rpa-icon-item:nth-of-type(2) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.4s;
+    }
+
+    .animate .rpa-icon-item:nth-of-type(3) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.6s;
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Sección: ¿Por qué RPA? */
+    .why-rpa {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco);
+    }
+
+    .why-rpa h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .why-rpa-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .why-rpa-item {
+        background-color: var(--color-blanco-ostion);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--color-amarillo-pure);
+    }
+
+    .why-rpa-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .why-rpa-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .why-rpa-item h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
         font-weight: bold;
     }
 
-    .rpa-workforce-cta {
-        margin-top: 2rem;
+    /* Sección: ¿Cómo funciona? */
+    .how-it-works {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-mixto);
+    }
+
+    .how-it-works h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .how-it-works-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .how-card {
+        background-color: var(--color-blanco);
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .how-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .how-card-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .how-card h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .how-card p {
+        color: var(--color-azul-energy);
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     /* Sección: Beneficios */
@@ -1021,112 +897,117 @@
 
     .rpa-benefits h2 {
         text-align: center;
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-    }
-
-    .rpa-benefits h2 .highlight-green {
-        color: #00d4aa;
-    }
-
-    .rpa-benefits-subtitle {
-        text-align: center;
         color: var(--color-azul-energy);
+        font-size: 2.2rem;
         margin-bottom: 3rem;
     }
 
     .rpa-benefits-grid {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
 
     .rpa-benefit-card {
-        text-align: center;
+        background-color: var(--color-blanco-ostion);
         padding: 2rem;
-        border: 2px solid #e0e0e0;
         border-radius: 10px;
-        transition: all 0.3s ease;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .rpa-benefit-card:hover {
-        border-color: #00d4aa;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0,212,170,0.2);
+        transform: scale(1.05);
     }
 
     .rpa-benefit-icon {
         width: 70px;
         height: 70px;
         margin: 0 auto 1rem;
-        font-size: 2.5rem;
-        color: #00d4aa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--color-amarillo-pure);
     }
 
     .rpa-benefit-card h3 {
         color: var(--color-azul-energy);
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        font-weight: bold;
     }
 
-    /* CTA Final */
+    /* Sección: CTA Final */
     .rpa-cta-final {
         padding: 4rem 2rem;
-        background: linear-gradient(135deg, #005f4a 0%, #00a88e 100%);
+        background-color: var(--color-blanco-ostion);
         text-align: center;
-        color: white;
     }
 
     .rpa-cta-final h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .btn-cta-large-green {
+    .rpa-cta-final p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
         display: inline-block;
-        background-color: white;
-        color: #00a88e;
-        padding: 1.2rem 3rem;
-        border-radius: 50px;
+        background-color: var(--color-azul-energy);
+        color: var(--color-blanco);
+        padding: 1rem 2.5rem;
+        border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.1rem;
-        transition: all 0.3s;
-        border: 2px solid white;
+        font-size: 1.05rem;
+        transition: background-color 0.3s;
     }
 
-    .btn-cta-large-green:hover {
-        background-color: #00d4aa;
-        color: white;
-        border-color: white;
+    .btn-primary:hover {
+        background-color: var(--color-azul-deep);
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-        .rpa-hero {
-            background: var(--color-amarillo-pure);
-        }
-
-        .rpa-hero-content {
+        .rpa-content-wrapper {
             grid-template-columns: 1fr;
+            gap: 2rem;
         }
 
-        .rpa-hero-left {
-            flex-direction: row;
-            justify-content: center;
+        .rpa-left-column h1 {
+            text-align: center;
         }
 
-        .rpa-hero-right {
-            padding-left: 0;
+        .rpa-info-card p {
+            text-align: center;
         }
 
-        .rpa-intro-content {
+        .how-it-works-grid {
             grid-template-columns: 1fr;
         }
 
         .rpa-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why-rpa-grid {
             grid-template-columns: 1fr;
         }
     }
@@ -1134,90 +1015,121 @@
     @media (max-width: 768px) {
         .rpa-hero {
             padding: 3rem 1.5rem;
+            height: 450px;
         }
 
-        .rpa-hero-right h1 {
+        .rpa-description-wrapper {
+            margin-top: 280px;
+        }
+
+        .rpa-hero h1 {
             font-size: 2rem;
         }
 
-        .rpa-logo {
-            width: 100px;
-            height: 100px;
-            font-size: 3rem;
+        .rpa-description-card p {
+            font-size: 1.1rem;
         }
 
-        .rpa-icon-badge {
-            width: 60px;
-            height: 60px;
-            font-size: 2rem;
+        .rpa-que-es-nosotros,
+        .why-rpa,
+        .how-it-works,
+        .rpa-benefits,
+        .rpa-cta-final {
+            padding: 3rem 1.5rem;
         }
 
-        .rpa-architecture h2,
-        .rpa-intro-text h2 {
-            font-size: 2rem;
-        }
-
+        .rpa-left-column h1,
+        .rpa-cta-final h2,
+        .why-rpa h2,
         .rpa-benefits h2,
-        .rpa-workforce h2 {
+        .how-it-works h2 {
             font-size: 1.8rem;
         }
 
-        .rpa-architecture-visual {
-            flex-direction: column;
+        .rpa-info-card p,
+        .rpa-cta-final p {
+            font-size: 1rem;
         }
 
-        .rpa-formula {
-            flex-direction: column;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .rpa-hero-left {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .rpa-hero-right h1 {
-            font-size: 1.6rem;
-        }
-
-        .rpa-benefits-grid {
+        .rpa-benefits-grid,
+        .why-rpa-grid {
             grid-template-columns: 1fr;
         }
     }
 
-    /* Estilos específicos para Desarrollo de Software */
+    @media (max-width: 480px) {
+        .rpa-hero {
+            height: 400px;
+        }
+
+        .rpa-description-wrapper {
+            margin-top: 250px;
+        }
+
+        .rpa-hero h1 {
+            font-size: 1.6rem;
+        }
+
+        .rpa-description-card p {
+            font-size: 1rem;
+        }
+
+        .rpa-que-es-nosotros,
+        .why-rpa,
+        .how-it-works,
+        .rpa-benefits,
+        .rpa-cta-final {
+            padding: 2.5rem 1.2rem;
+        }
+
+        .how-card,
+        .rpa-benefit-card,
+        .why-rpa-item {
+            padding: 1.5rem;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .rpa-icons-container {
+            padding: 1.5rem;
+        }
+    }
+
+    /* Estilos específicos para la página de Desarrollo de Software */
 
     /* Dev Hero Section */
 
     .dev-hero {
-        position: relative; /* Posicion relativa del hero para el video */
-        margin-top: 80px; /* Espacio entre el top */
-        padding: 1.5rem 2rem; /* Espacio interno dentro del elemento */
-        text-align: center; /* Centra el texto */
-        background-color: var(--color-blanco); /* Color de fondo */
-        overflow: hidden; /* Para que no salte a otro section */
+        position: relative;
+        margin-top: 80px;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background-color: var(--color-blanco);
+        overflow: hidden;
         height: 527px;
     }
 
     .dev-hero-video {
-        position: absolute; /* Posicion absoluta del video */
-        top: 0; /* 0 margen superior */
-        left: 0; /* 0 margen izquierdo */
-        width: 100%; /* 100% del ancho */
-        height: 100%; /* 100% de altura */
-        object-fit: cover; /* hace que el video cubra todo el área */
-        z-index: 0; /* lo manda al fondo */
-        opacity: 1; /* ajusta la transparencia del video */
-        background-color: var(--color-blanco); /* Color blanco de fondo */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1;
+        background-color: var(--color-blanco);
     }
 
     /* El contenido encima del video */
     .dev-hero h1,
     .dev-hero p,
-    .dev-hero .description-card {
+    .dev-hero .dev-description-card {
         position: relative;
-        z-index: 1; /* asegura que esté delante del video */
+        z-index: 1;
     }
 
     /* Opcional: para mejorar la legibilidad del texto */
@@ -1228,64 +1140,51 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(255, 255, 255, 0.4); /* capa semitransparente sobre el video */
+        background: rgba(255, 255, 255, 0.4);
         z-index: 0;
     }
 
     .dev-hero h1 {
-        font-size: 3rem; /* Tamaño de fuente para h1 */
-        color: var(--color-blanco); /* Color de fuente h1 */
-        margin-bottom: 1rem; /* Espacio de margen en la parte inferior del elemento */
-        line-height: 1.2; /* Distancia vertical entre lineas de texto dentro del párrafo */
-        max-width: 1200px; /* Genera el maximo ancho del hero */
-        margin-left: auto; /* Genera automaticamente el margen a la izquierda */
-        margin-right: auto; /* Genera automaticamente el margen a la derecha */
-    }
-
-    .dev-hero h1 .highlight-yellow {
-        color: var(--color-amarillo-pure); /* Cambia el color de letra de la palabra Klammer */
-        font-family: 'Calling Code', 'Helvetica', sans-serif; /* Cambia la fuente de la palabra Klammer */
-    }
-
-    .dev-hero p {
-        font-size: 1.1rem; /* Tamaño de fuente de p en hero */
-        color: var(--color-blanco); /* Color de fuente p */
-        max-width: 900px; /* Maximo ancho */
-        margin: 2rem auto; /* Ancho de margen */
+        font-size: 3rem;
+        color: var(--color-blanco);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .dev-description-wrapper {
         margin-top: 330px;
-        display: flex; /* Display en flex */
-        align-items: end; /* Centra verticalmente las llaves con el texto */
-        justify-content: center; /* Centra el grupo en el hero */
-        gap: 0; /* Espacio entre las columnas */
-        position: relative; /* Posicion relativa */
-        z-index: 1; /* Asegura que este sobre el video */
-        flex-wrap: nowrap; /* Permite que se adapte en pantallas pequeñas */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
     }
 
     .dev-description-card {
-        max-width: 1000px; /* Maximo ancho del card */
-        margin: 0; /* Ancho de margen */
-        /* background-color: var(--color-blanco); */ /* Color del div */
-        padding: 2rem; /* Espacio al elemento top */
-        border-radius: 10px; /* Redondea el borde del card */
-        /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */ /* Sombra del borde */
+        max-width: 1000px;
+        margin: 0;
+        padding: 2rem;
+        border-radius: 10px;
         opacity: 1;
     }
 
     .dev-description-card p {
-        text-align: center; /* Centra el texto p dentro del card */
-        color: var(--color-blanco-mixto); /* Color del texto */
-        font-size: 1.05rem; /* Tamaño de la fuente p */
+        text-align: center;
+        color: var(--color-blanco-mixto);
+        font-size: 1.3rem;
+        font-style: italic;
     }
 
-    .dev-description-card strong {
-        font-weight: bold; /* Fuente bold para strong */
+    /* Sección: ¿Qué es? */
+    .dev-que-es-nosotros {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-mixto);
     }
 
-    /* .dev-hero-content {
+    .dev-content-wrapper {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
@@ -1294,173 +1193,425 @@
         align-items: center;
     }
 
-    .dev-hero-text h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+    .dev-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
-    .highlight-blue {
-        color: var(--color-amarillo-pure);
-    }
-
-    .dev-hero-text .subtitle {
-        font-size: 1.3rem;
-        font-style: italic;
-        margin-bottom: 1.5rem;
-    } */
-
-    .btn-dev {
-        display: inline-block;
-        background-color: var(--color-amarillo-pure);
+    .dev-left-column h1 {
         color: var(--color-azul-energy);
-        padding: 1rem 2.5rem;
-        border-radius: 50px;
-        text-decoration: none;
+        font-size: 2.2rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .dev-card-spacing {
+        margin-top: 0.5rem;
+    }
+
+    .dev-right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+
+    .dev-icons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .dev-icon-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    .dev-icon-circle {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-amarillo-pure);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: var(--color-azul-energy);
+        flex-shrink: 0;
+    }
+
+    .dev-icon-item span {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
         font-weight: bold;
-        transition: all 0.3s;
     }
 
-    .btn-dev:hover {
-        background-color: transparent;
-        border: 2px solid var(--color-amarillo-pure);
-        color: white;
+    .dev-info-card {
+        background-color: var(--color-blanco-mixto);
+        padding: 1.5rem;
     }
 
-    .dev-intro {
+    .dev-info-card p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* Animación iconos */
+    .animate .dev-icon-item:nth-of-type(1) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .animate .dev-icon-item:nth-of-type(2) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.4s;
+    }
+
+    .animate .dev-icon-item:nth-of-type(3) {
+        animation: slideInRight 0.6s ease forwards;
+        animation-delay: 0.6s;
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Sección: ¿Por qué Desarrollo? */
+    .why-dev {
         padding: 4rem 2rem;
         background-color: var(--color-blanco);
+    }
+
+    .why-dev h2 {
         text-align: center;
-    }
-
-    .dev-intro h2 {
         color: var(--color-azul-energy);
-        font-size: 2.3rem;
-        margin-bottom: 1rem;
-    }
-
-    .dev-types {
-        padding: 4rem 2rem;
-        background: var(--color-blanco-mixto);
-        text-align: center;
-    }
-
-    .dev-types h2 {
-        color: var(--color-azul-energy);
-        font-size: 2.3rem;
+        font-size: 2.2rem;
         margin-bottom: 3rem;
     }
 
-    .dev-types-grid {
-        max-width: 1000px;
+    .why-dev-grid {
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
 
-    .dev-type-card {
-        background-color: white;
-        border-radius: 10px;
+    .why-dev-item {
+        background-color: var(--color-blanco-ostion);
         padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: all 0.3s;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--color-amarillo-pure);
     }
 
-    .dev-type-card:hover {
+    .why-dev-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
 
-    .dev-type-icon {
-        font-size: 3rem;
-        color: #00d4aa;
+    .why-dev-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .why-dev-item h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Sección: ¿Cómo funciona? */
+    .how-it-works {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-mixto);
+    }
+
+    .how-it-works h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .how-it-works-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .how-card {
+        background-color: var(--color-blanco);
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .how-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .how-card-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .how-card h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.3rem;
         margin-bottom: 1rem;
+        font-weight: bold;
     }
 
+    .how-card p {
+        color: var(--color-azul-energy);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Sección: Beneficios */
     .dev-benefits {
         padding: 4rem 2rem;
         background-color: var(--color-blanco);
-        text-align: center;
     }
 
     .dev-benefits h2 {
-        color: #00d4aa;
-        font-size: 2.3rem;
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
         margin-bottom: 3rem;
     }
 
     .dev-benefits-grid {
-        max-width: 900px;
+        max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
     }
 
     .dev-benefit-card {
-        background-color: white;
-        border: 2px solid #e0e0e0;
-        padding: 1.5rem;
+        background-color: var(--color-blanco-ostion);
+        padding: 2rem;
         border-radius: 10px;
-        font-weight: bold;
-        color: var(--color-azul-energy);
-        transition: all 0.3s;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .dev-benefit-card:hover {
-        border-color: #00d4aa;
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0,212,170,0.2);
+        transform: scale(1.05);
     }
 
-    .dev-cta {
-        padding: 4rem 2rem;
-        background: linear-gradient(135deg, var(--color-azul-deep) 0%, var(--color-azul-energy) 100%);
-        text-align: center;
-        color: white;
+    .dev-benefit-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--color-amarillo-pure);
     }
 
-    .dev-cta h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .btn-dev-large {
-        display: inline-block;
-        background-color: var(--color-amarillo-pure);
+    .dev-benefit-card h3 {
         color: var(--color-azul-energy);
-        padding: 1.2rem 3rem;
-        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Sección: CTA Final */
+    .dev-cta-final {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-ostion);
+        text-align: center;
+    }
+
+    .dev-cta-final h2 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dev-cta-final p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--color-azul-energy);
+        color: var(--color-blanco);
+        padding: 1rem 2.5rem;
+        border-radius: 5px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.1rem;
-        transition: all 0.3s;
+        font-size: 1.05rem;
+        transition: background-color 0.3s;
     }
 
-    .btn-dev-large:hover {
-        background-color: transparent;
-        border: 2px solid white;
-        color: white;
+    .btn-primary:hover {
+        background-color: var(--color-azul-deep);
     }
 
     /* Responsive */
     @media (max-width: 1024px) {
-        .dev-hero-content,
-        .dev-types-grid,
-        .dev-benefits-grid {
+        .dev-content-wrapper {
             grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .dev-left-column h1 {
             text-align: center;
+        }
+
+        .dev-info-card p {
+            text-align: center;
+        }
+
+        .how-it-works-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .dev-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why-dev-grid {
+            grid-template-columns: 1fr;
         }
     }
 
     @media (max-width: 768px) {
-        .dev-hero-text h1 {
+        .dev-hero {
+            padding: 3rem 1.5rem;
+            height: 450px;
+        }
+
+        .dev-description-wrapper {
+            margin-top: 280px;
+        }
+
+        .dev-hero h1 {
             font-size: 2rem;
         }
 
-        .dev-intro h2,
-        .dev-types h2,
-        .dev-benefits h2 {
+        .dev-description-card p {
+            font-size: 1.1rem;
+        }
+
+        .dev-que-es-nosotros,
+        .why-dev,
+        .how-it-works,
+        .dev-benefits,
+        .dev-cta-final {
+            padding: 3rem 1.5rem;
+        }
+
+        .dev-left-column h1,
+        .dev-cta-final h2,
+        .why-dev h2,
+        .dev-benefits h2,
+        .how-it-works h2 {
             font-size: 1.8rem;
+        }
+
+        .dev-info-card p,
+        .dev-cta-final p {
+            font-size: 1rem;
+        }
+
+        .dev-benefits-grid,
+        .why-dev-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .dev-hero {
+            height: 400px;
+        }
+
+        .dev-description-wrapper {
+            margin-top: 250px;
+        }
+
+        .dev-hero h1 {
+            font-size: 1.6rem;
+        }
+
+        .dev-description-card p {
+            font-size: 1rem;
+        }
+
+        .dev-que-es-nosotros,
+        .why-dev,
+        .how-it-works,
+        .dev-benefits,
+        .dev-cta-final {
+            padding: 2.5rem 1.2rem;
+        }
+
+        .how-card,
+        .dev-benefit-card,
+        .why-dev-item {
+            padding: 1.5rem;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .dev-icons-container {
+            padding: 1.5rem;
         }
     }

@@ -53,59 +53,64 @@
             </div>
         </div>
     </section>
-
-    <section style="background-color: #ffffff;">
-         <div class="bi-description-wrapper">
-            <div class="bi-description-card">
-                <p>
-                    Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa con el fin de lograr <strong>ventajas competitivas</strong>.
-                </p>
-                <p>
-                    No es lo mismo tener datos a tener información que se transforma en conocimiento.
-                </p>
-            </div>
-        </div>
-
-        <div class="bi-hero-card">
-            <div class="bi-icons">
-                <div class="bi-icon-item">
-                    <div class="bi-icon-badge">
-                        <i class="fa-solid fa-gauge-high"></i>
-                    </div>
-                    <span>KPI</span>
+    
+    <!-- ¿Qué es? y Nosotros -->
+    <section class="bi-que-es-nosotros">
+        <div class="bi-content-wrapper">
+            <!-- Columna izquierda: texto -->
+            <div class="bi-left-column">
+                <h1>¿Qué es?</h1>
+                <div class="bi-info-card">
+                    <p>
+                        Es una Herramienta que nos permite descubrir y visualizar los datos para analizar con facilidad y tomar decisiones de manera rápida.
+                    </p>
                 </div>
-                <div class="bi-icon-item">
-                    <div class="bi-icon-badge">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <span>Graphs</span>
+
+                <div class="bi-info-card bi-card-spacing">
+                    <p>
+                        Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa para lograr <strong>ventajas competitivas</strong>. No es lo mismo tener datos que tener información que se transforma en conocimiento.
+                    </p>
                 </div>
             </div>
-            <p>
-                Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa con el fin de lograr <span class="highlight">ventajas competitivas</span>.
-            </p>
-            <p>
-                No es lo mismo tener datos a tener información que se transforma en conocimiento.
-            </p>
-            <div class="qlik-partner">
-                <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 0.9rem;">Powered by</span><br>
-                <span style="color: var(--color-azul-energy); font-weight: bold; font-size: 1.2rem;">Qlik Partner</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- ¿Qué es BI? -->
-    <section class="bi-intro">
-        <div class="bi-intro-content">
-            <div class="bi-intro-image">
-                <img src="assets/img/bi-illustration.png" alt="Business Intelligence" style="max-width: 400px;">
-            </div>
-            <div class="bi-intro-text">
-                <h2>Business Intelligence</h2>
-                <p><em>"Let's speak a new language. Los datos son el nuevo lenguaje de los negocios."</em></p>
-                <p>
-                    Es una <strong>HERRAMIENTA</strong> que nos permite <strong>DESCUBRIR</strong> y <strong>VISUALIZAR</strong> los datos para analizar con facilidad y lograr tomar decisiones de manera rápida.
-                </p>
+            <!-- Columna derecha: gráfica animada -->
+            <div class="bi-right-column">
+                <div class="bi-chart">
+                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Barras animadas -->
+                        <rect class="bar" x="50" y="280" width="60" height="70" fill="#F7D600" opacity="0.9"/>
+                        <rect class="bar" x="130" y="220" width="60" height="130" fill="#F7D600" opacity="0.9"/>
+                        <rect class="bar" x="210" y="160" width="60" height="190" fill="#F7D600" opacity="0.9"/>
+                        <rect class="bar" x="290" y="80" width="60" height="270" fill="#F7D600" opacity="0.9"/>
+
+                        <!-- Línea de tendencia animada -->
+                        <path class="line-trend" d="M 80 300 Q 160 240, 240 180 T 320 100" 
+                            stroke="#1F4589" 
+                            stroke-width="3" 
+                            fill="none"/>
+
+                        <!-- Puntos en la línea animados -->
+                        <circle class="line-point" cx="80" cy="300" r="6" fill="#1F4589"/>
+                        <circle class="line-point" cx="160" cy="240" r="6" fill="#1F4589"/>
+                        <circle class="line-point" cx="240" cy="180" r="6" fill="#1F4589"/>
+                        <circle class="line-point" cx="320" cy="100" r="6" fill="#1F4589"/>
+
+                        <!-- Ejes -->
+                        <line x1="40" y1="360" x2="360" y2="360" stroke="#333" stroke-width="2"/>
+                        <line x1="40" y1="360" x2="40" y2="60" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Flechas -->
+                        <polygon points="40,60 35,70 45,70" fill="#333"/>
+                        <polygon points="360,360 350,355 350,365" fill="#333"/>
+                        
+                        <!-- Etiquetas -->
+                        <text x="200" y="385" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold">Tiempo</text>
+                        <text x="15" y="200" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold" transform="rotate(-90 15 200)">Valor</text>
+                        
+                        <!-- Título -->
+                        <text x="200" y="30" text-anchor="middle" fill="#1F4589" font-size="18" font-weight="bold">Crecimiento de Datos</text>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
@@ -115,18 +120,33 @@
         <h2>¿Por qué BI?</h2>
         <div class="why-bi-grid">
             <div class="why-bi-item">
+                <div class="why-bi-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
                 <h3>1. Datos confiables</h3>
             </div>
             <div class="why-bi-item">
+                <div class="why-bi-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
                 <h3>2. Acceso a la información en tiempo real</h3>
             </div>
             <div class="why-bi-item">
+                <div class="why-bi-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
                 <h3>3. Información procesable</h3>
             </div>
             <div class="why-bi-item">
+                <div class="why-bi-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
                 <h3>4. Obtén valor a tus datos</h3>
             </div>
             <div class="why-bi-item">
+                <div class="why-bi-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
                 <h3>5. Trabaja de manera más inteligente</h3>
             </div>
         </div>
@@ -198,16 +218,20 @@
                 <div class="bi-benefit-icon">
                     <i class="fa-solid fa-flask"></i>
                 </div>
-                <h3>Experimenta</h3>
+                <h3>Experiencia</h3>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="bi-cta">
+    <section class="bi-cta-final">
         <h2>¿Estás interesado en adquirir alguna solución de Business Intelligence?</h2>
         <p>Contacta a nuestros asesores de ventas para una atención personalizada para tu compra.</p>
-        <a href="index.html#contacto" class="btn-cta-large">¡Lo quiero en mi empresa!</a>
+        <div class="cta-button">
+            <a href="index.html#contacto" class="btn-primary">
+                ¡Lo quiero en mi empresa!
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -283,6 +307,26 @@
 
         const video = document.getElementById('bi-video');
         video.playbackRate = 0.9; // ~la mitad de velocidad (más lento)
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector('.bi-que-es-nosotros');
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Agrega clase "animate" al section
+                    section.classList.add('animate');
+                    // Opcional: desactivar observer si solo quieres que se ejecute una vez
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5 // El 50% de la sección debe estar visible
+        });
+
+        observer.observe(section);
+    });
+
     </script>
 </body>
 </html>
