@@ -1,0 +1,581 @@
+/* Klammer bi.css */
+
+/* Definición de paleta de colores */
+
+    :root {
+        --color-azul-energy:#1F4589; /* Azul Energy Blue*/
+        --color-amarillo-pure:#F7D600; /* Amarillo Pure Yellow */
+        --color-amarillo-forest: #F6C500; /*  Amarillo Forest */
+        --color-azul-deep: #162F7E; /* Azul Deep */
+        --color-blanco-ostion: #F3F1EE; /* Blanco Ostion */
+        --color-blanco-mixto: #F6F7F4; /* Blanco Mixto */
+        --color-blanco: #FFFFFF; /* Blanco puro */
+    }
+
+/* Definición de estilos de fuentes */
+
+    @font-face {
+    font-family: 'Helvetica';
+    src: 
+        url('../fonts/helvetica-font/Helvetica-Font/Helvetica.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-Bold.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-BoldOblique.ttf') format('truetype'),
+        url('../fonts/helvetica-font/Helvetica-Oblique.ttf') format('truetype'),
+        url('../fonts/helvetica-font/helvetica-light-587ebe5a59211.ttf') format('truetype'),
+        url('../fonts/helvetica-font/helvetica-compressed-5871d14b6903a.otf') format('opentype'),
+        url('../fonts/helvetica-font/helvetica-rounded-bold-5871d05ead8de.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+    font-family: "Calling Code";
+    src: url('../fonts/calling_code/CallingCode-Regular.ttf') format('truetype'),
+        url('../fonts/calling_code/CallingCode-Regular.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    }
+
+    /* Reset básico de estilos */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Definiciones generales */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Helvetica', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: var(--color-blanco-ostion);
+    }
+
+    /* Estilos específicos para la página de BI */
+
+    /* Bi Hero Section */
+
+    .bi-hero {
+        position: relative;
+        margin-top: 80px;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        background-color: var(--color-blanco);
+        overflow: hidden;
+        height: 527px;
+    }
+
+    .bi-hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1;
+        background-color: var(--color-blanco);
+    }
+
+    /* El contenido encima del video */
+    .bi-hero h1,
+    .bi-hero p,
+    .bi-hero .bi-description-card {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Opcional: para mejorar la legibilidad del texto */
+    .bi-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        z-index: 0;
+    }
+
+    .bi-hero h1 {
+        font-size: 3rem;
+        color: var(--color-blanco);
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bi-description-wrapper {
+        margin-top: 330px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .bi-description-card {
+        max-width: 1000px;
+        margin: 0;
+        padding: 2rem;
+        border-radius: 10px;
+        opacity: 1;
+    }
+
+    .bi-description-card p {
+        text-align: center;
+        color: var(--color-blanco-mixto);
+        font-size: 1.3rem;
+        font-style: italic;
+    }
+
+    /* Sección: ¿Qué es? y Nosotros combinadas */
+    .bi-que-es-nosotros {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-mixto);
+    }
+
+    .bi-content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .bi-left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .bi-left-column h1 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .bi-card-spacing {
+        margin-top: 0.5rem;
+    }
+
+    .bi-right-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+
+    .bi-chart {
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--color-blanco-mixto);
+        padding: 2rem;
+        /* border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
+    }
+
+    .bi-info-card {
+        background-color: var(--color-blanco-mixto);
+        padding: 1.5rem;
+        /* border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); */
+    }
+
+    .bi-info-card p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin: 0;
+        text-align: left;
+    }
+
+    /* Animación barras */
+
+    .bar {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    /* Línea de tendencia preparada */
+    .line-trend {
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+    }
+
+    /* Puntos preparados */
+    .line-point {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+    }
+
+    /* Animación activada */
+    .animate .bar {
+        animation: growBar 1s ease-out forwards;
+    }
+
+    .animate .bar:nth-of-type(1) { animation-delay: 0.2s; }
+    .animate .bar:nth-of-type(2) { animation-delay: 0.4s; }
+    .animate .bar:nth-of-type(3) { animation-delay: 0.6s; }
+    .animate .bar:nth-of-type(4) { animation-delay: 0.8s; }
+
+    .animate .line-trend {
+        animation: drawLine 1.5s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .animate .line-point:nth-of-type(1) { animation: showPoint 0.5s ease forwards; animation-delay: 2.5s; }
+    .animate .line-point:nth-of-type(2) { animation: showPoint 0.5s ease forwards; animation-delay: 2.7s; }
+    .animate .line-point:nth-of-type(3) { animation: showPoint 0.5s ease forwards; animation-delay: 2.9s; }
+    .animate .line-point:nth-of-type(4) { animation: showPoint 0.5s ease forwards; animation-delay: 3.1s; }
+
+    @keyframes growBar {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+    }
+
+    @keyframes drawLine {
+        from { stroke-dashoffset: 600; }
+        to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes showPoint {
+        from { opacity: 0; transform: scale(0); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+
+    /* Sección: ¿Por qué BI? */
+    .why-bi {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco);
+    }
+
+    .why-bi h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .why-bi-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .why-bi-item {
+        background-color: var(--color-blanco-ostion);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-left: 4px solid var(--color-amarillo-pure);
+    }
+
+    .why-bi-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .why-bi-icon {
+        width: 70px;
+        height: 70px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .why-bi-item h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    /* Sección: ¿Cómo funciona? */
+    .how-it-works {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-mixto);
+    }
+
+    .how-it-works h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .how-it-works-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .how-card {
+        background-color: var(--color-blanco);
+        padding: 2.5rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .how-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .how-card-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .how-card h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .how-card p {
+        color: var(--color-azul-energy);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Sección: Beneficios */
+    .bi-benefits {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco);
+    }
+
+    .bi-benefits h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .bi-benefits-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .bi-benefit-card {
+        background-color: var(--color-blanco-ostion);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bi-benefit-card:hover {
+        transform: scale(1.05);
+    }
+
+    .bi-benefit-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: var(--color-amarillo-pure);
+    }
+
+    .bi-benefit-card h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    /* Sección: CTA Final */
+    .bi-cta-final {
+        padding: 4rem 2rem;
+        background-color: var(--color-blanco-ostion);
+        text-align: center;
+    }
+
+    .bi-cta-final h2 {
+        color: var(--color-azul-energy);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bi-cta-final p {
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        max-width: 900px;
+        margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--color-azul-energy);
+        color: var(--color-blanco);
+        padding: 1rem 2.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.05rem;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-azul-deep);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .bi-content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .bi-left-column h1 {
+            text-align: center;
+        }
+
+        .bi-info-card p {
+            text-align: center;
+        }
+
+        .how-it-works-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .bi-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .why-bi-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .bi-hero {
+            padding: 3rem 1.5rem;
+            height: 450px;
+        }
+
+        .bi-description-wrapper {
+            margin-top: 280px;
+        }
+
+        .bi-hero h1 {
+            font-size: 2rem;
+        }
+
+        .bi-description-card p {
+            font-size: 1.1rem;
+        }
+
+        .bi-que-es-nosotros,
+        .why-bi,
+        .how-it-works,
+        .bi-benefits,
+        .bi-cta-final {
+            padding: 3rem 1.5rem;
+        }
+
+        .bi-left-column h1,
+        .bi-cta-final h2,
+        .why-bi h2,
+        .bi-benefits h2,
+        .how-it-works h2 {
+            font-size: 1.8rem;
+        }
+
+        .bi-info-card p,
+        .bi-cta-final p {
+            font-size: 1rem;
+        }
+
+        .bi-benefits-grid,
+        .why-bi-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .bi-hero {
+            height: 400px;
+        }
+
+        .bi-description-wrapper {
+            margin-top: 250px;
+        }
+
+        .bi-hero h1 {
+            font-size: 1.6rem;
+        }
+
+        .bi-description-card p {
+            font-size: 1rem;
+        }
+
+        .bi-que-es-nosotros,
+        .why-bi,
+        .how-it-works,
+        .bi-benefits,
+        .bi-cta-final {
+            padding: 2.5rem 1.2rem;
+        }
+
+        .how-card,
+        .bi-benefit-card,
+        .why-bi-item {
+            padding: 1.5rem;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .bi-chart {
+            padding: 1.5rem;
+        }
+    }
