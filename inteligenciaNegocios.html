@@ -6,6 +6,9 @@
     <title>Inteligencia de Negocios | Klammer</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/soluciones/bi.css">
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="assets/img/LOGOTIPO/LogosSF/klammer_icono.png">
 </head>
@@ -55,181 +58,154 @@
     </section>
     
     <!-- ¿Qué es? y Nosotros -->
-    <section class="bi-que-es-nosotros">
+    <section class="bi-que-es-nosotros" id="bi-que-es-nosotros">
         <div class="bi-content-wrapper">
-            <!-- Columna izquierda: texto -->
-            <div class="bi-left-column">
-                <h1>¿Qué es?</h1>
-                <div class="bi-info-card">
-                    <p>
-                        Es una Herramienta que nos permite descubrir y visualizar los datos para analizar con facilidad y tomar decisiones de manera rápida.
-                    </p>
-                </div>
+            <!-- Columna izquierda -->
+            <div class="bi-left-column" data-aos="fade-right" data-aos-duration="1000">
+            <h1 data-aos="zoom-in" data-aos-delay="100">¿Qué es?</h1>
 
-                <div class="bi-info-card bi-card-spacing">
-                    <p>
-                        Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa para lograr <strong>ventajas competitivas</strong>. No es lo mismo tener datos que tener información que se transforma en conocimiento.
-                    </p>
-                </div>
+            <div class="bi-info-card" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                Es una herramienta que nos permite descubrir y visualizar los datos para analizarlos con facilidad y tomar decisiones de manera rápida.
+                </p>
             </div>
 
-            <!-- Columna derecha: gráfica animada -->
-            <div class="bi-right-column">
-                <div class="bi-chart">
-                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Barras animadas -->
-                        <rect class="bar" x="50" y="280" width="60" height="70" fill="#F7D600" opacity="0.9"/>
-                        <rect class="bar" x="130" y="220" width="60" height="130" fill="#F7D600" opacity="0.9"/>
-                        <rect class="bar" x="210" y="160" width="60" height="190" fill="#F7D600" opacity="0.9"/>
-                        <rect class="bar" x="290" y="80" width="60" height="270" fill="#F7D600" opacity="0.9"/>
+            <div class="bi-info-card bi-card-spacing" data-aos="fade-up" data-aos-delay="400">
+                <p>
+                Con nuestra consultoría y plataformas de tecnología líderes en el mercado, aprovecha al máximo toda la información que posee tu empresa para lograr
+                <strong>ventajas competitivas</strong>. No es lo mismo tener datos que tener información que se transforma en conocimiento.
+                </p>
+            </div>
+            </div>
 
-                        <!-- Línea de tendencia animada -->
-                        <path class="line-trend" d="M 80 300 Q 160 240, 240 180 T 320 100" 
-                            stroke="#1F4589" 
-                            stroke-width="3" 
-                            fill="none"/>
+            <!-- Columna derecha -->
+            <div class="bi-right-column" data-aos="fade-left" data-aos-duration="1200">
+            <div class="bi-chart">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Barras animadas -->
+                <rect class="bar" x="50" y="280" width="60" height="70" fill="#F7D600" opacity="0.9"/>
+                <rect class="bar" x="130" y="220" width="60" height="130" fill="#F7D600" opacity="0.9"/>
+                <rect class="bar" x="210" y="160" width="60" height="190" fill="#F7D600" opacity="0.9"/>
+                <rect class="bar" x="290" y="80" width="60" height="270" fill="#F7D600" opacity="0.9"/>
 
-                        <!-- Puntos en la línea animados -->
-                        <circle class="line-point" cx="80" cy="300" r="6" fill="#1F4589"/>
-                        <circle class="line-point" cx="160" cy="240" r="6" fill="#1F4589"/>
-                        <circle class="line-point" cx="240" cy="180" r="6" fill="#1F4589"/>
-                        <circle class="line-point" cx="320" cy="100" r="6" fill="#1F4589"/>
+                <!-- Línea de tendencia animada -->
+                <path class="line-trend" d="M 80 300 Q 160 240, 240 180 T 320 100"
+                        stroke="#1F4589" stroke-width="3" fill="none"/>
 
-                        <!-- Ejes -->
-                        <line x1="40" y1="360" x2="360" y2="360" stroke="#333" stroke-width="2"/>
-                        <line x1="40" y1="360" x2="40" y2="60" stroke="#333" stroke-width="2"/>
-                        
-                        <!-- Flechas -->
-                        <polygon points="40,60 35,70 45,70" fill="#333"/>
-                        <polygon points="360,360 350,355 350,365" fill="#333"/>
-                        
-                        <!-- Etiquetas -->
-                        <text x="200" y="385" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold">Tiempo</text>
-                        <text x="15" y="200" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold" transform="rotate(-90 15 200)">Valor</text>
-                        
-                        <!-- Título -->
-                        <text x="200" y="30" text-anchor="middle" fill="#1F4589" font-size="18" font-weight="bold">Crecimiento de Datos</text>
-                    </svg>
-                </div>
+                <!-- Puntos -->
+                <circle class="line-point" cx="80" cy="300" r="6" fill="#1F4589"/>
+                <circle class="line-point" cx="160" cy="240" r="6" fill="#1F4589"/>
+                <circle class="line-point" cx="240" cy="180" r="6" fill="#1F4589"/>
+                <circle class="line-point" cx="320" cy="100" r="6" fill="#1F4589"/>
+
+                <!-- Ejes -->
+                <line x1="40" y1="360" x2="360" y2="360" stroke="#333" stroke-width="2"/>
+                <line x1="40" y1="360" x2="40" y2="60" stroke="#333" stroke-width="2"/>
+
+                <!-- Flechas -->
+                <polygon points="40,60 35,70 45,70" fill="#333"/>
+                <polygon points="360,360 350,355 350,365" fill="#333"/>
+
+                <!-- Etiquetas -->
+                <text x="200" y="385" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold">Tiempo</text>
+                <text x="15" y="200" text-anchor="middle" fill="#1F4589" font-size="14" font-weight="bold" transform="rotate(-90 15 200)">Valor</text>
+
+                <!-- Título -->
+                <text x="200" y="30" text-anchor="middle" fill="#1F4589" font-size="18" font-weight="bold">Crecimiento de Datos</text>
+                </svg>
+            </div>
             </div>
         </div>
     </section>
 
+
     <!-- ¿Por qué BI? -->
-    <section class="why-bi">
-        <h2>¿Por qué BI?</h2>
+    <section class="why-bi" data-aos="fade-up" id="why-bi">
+        <h2 data-aos="fade-down">¿Por qué BI?</h2>
         <div class="why-bi-grid">
-            <div class="why-bi-item">
-                <div class="why-bi-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3>1. Datos confiables</h3>
+            <div class="why-bi-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="why-bi-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>1. Datos confiables</h3>
             </div>
-            <div class="why-bi-item">
-                <div class="why-bi-icon">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-                <h3>2. Acceso a la información en tiempo real</h3>
+            <div class="why-bi-item" data-aos="zoom-in" data-aos-delay="200">
+            <div class="why-bi-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>2. Acceso a la información en tiempo real</h3>
             </div>
-            <div class="why-bi-item">
-                <div class="why-bi-icon">
-                    <i class="fa-solid fa-lightbulb"></i>
-                </div>
-                <h3>3. Información procesable</h3>
+            <div class="why-bi-item" data-aos="zoom-in" data-aos-delay="300">
+            <div class="why-bi-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>3. Información procesable</h3>
             </div>
-            <div class="why-bi-item">
-                <div class="why-bi-icon">
-                    <i class="fa-solid fa-gem"></i>
-                </div>
-                <h3>4. Obtén valor a tus datos</h3>
+            <div class="why-bi-item" data-aos="zoom-in" data-aos-delay="400">
+            <div class="why-bi-icon"><i class="fa-solid fa-gem"></i></div>
+            <h3>4. Obtén valor a tus datos</h3>
             </div>
-            <div class="why-bi-item">
-                <div class="why-bi-icon">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <h3>5. Trabaja de manera más inteligente</h3>
+            <div class="why-bi-item" data-aos="zoom-in" data-aos-delay="500">
+            <div class="why-bi-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>5. Trabaja de manera más inteligente</h3>
             </div>
         </div>
     </section>
 
     <!-- ¿Cómo funciona? -->
-    <section class="how-it-works">
-        <h2>¿Cómo funciona?</h2>
+    <section class="how-it-works" data-aos="fade-up">
+        <h2 data-aos="fade-down">¿Cómo funciona?</h2>
         <div class="how-it-works-grid">
-            <div class="how-card">
-                <div class="how-card-icon">
-                    <i class="fa-solid fa-database"></i>
-                </div>
-                <h3>Extraction</h3>
-                <p>Lo primero es identificar los diferentes orígenes de donde proviene tu información la cual dará vida a tus datos, creando una nueva manera de analizar los datos.</p>
+            <div class="how-card" data-aos="flip-left" data-aos-delay="100">
+            <div class="how-card-icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Extraction</h3>
+            <p>Lo primero es identificar los diferentes orígenes...</p>
             </div>
-            <div class="how-card">
-                <div class="how-card-icon">
-                    <i class="fa-solid fa-rotate"></i>
-                </div>
-                <h3>Transformation</h3>
-                <p>En esta etapa comienza la magia, a través de funciones y algoritmos, transformamos y centralizamos tus datos, creando un modelo único de datos el cual te ayudará a poder representar gráficamente la información.</p>
+            <div class="how-card" data-aos="flip-left" data-aos-delay="200">
+            <div class="how-card-icon"><i class="fa-solid fa-rotate"></i></div>
+            <h3>Transformation</h3>
+            <p>En esta etapa comienza la magia...</p>
             </div>
-            <div class="how-card">
-                <div class="how-card-icon">
-                    <i class="fa-solid fa-chart-pie"></i>
-                </div>
-                <h3>Load</h3>
-                <p>Comienza a explorar, analizar y mejorar tu toma de decisiones.</p>
+            <div class="how-card" data-aos="flip-left" data-aos-delay="300">
+            <div class="how-card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3>Load</h3>
+            <p>Comienza a explorar, analizar y mejorar tu toma de decisiones.</p>
             </div>
         </div>
     </section>
 
     <!-- Beneficios -->
-    <section class="bi-benefits">
-        <h2>Beneficios</h2>
+    <section class="bi-benefits" data-aos="fade-up">
+        <h2 data-aos="fade-down">Beneficios</h2>
         <div class="bi-benefits-grid">
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-network-wired"></i>
-                </div>
-                <h3>Conecta</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <h3>Conecta</h3>
             </div>
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3>Administra</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Administra</h3>
             </div>
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-gears"></i>
-                </div>
-                <h3>Crea</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Crea</h3>
             </div>
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <h3>Visualiza</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Visualiza</h3>
             </div>
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-compass-drafting"></i>
-                </div>
-                <h3>Desarrolla</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="500">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <h3>Desarrolla</h3>
             </div>
-            <div class="bi-benefit-card">
-                <div class="bi-benefit-icon">
-                    <i class="fa-solid fa-flask"></i>
-                </div>
-                <h3>Experiencia</h3>
+            <div class="bi-benefit-card" data-aos="zoom-in" data-aos-delay="600">
+            <div class="bi-benefit-icon"><i class="fa-solid fa-flask"></i></div>
+            <h3>Experiencia</h3>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="bi-cta-final">
-        <h2>¿Estás interesado en adquirir alguna solución de Business Intelligence?</h2>
-        <p>Contacta a nuestros asesores de ventas para una atención personalizada para tu compra.</p>
-        <div class="cta-button">
+    <section class="bi-cta-final" data-aos="fade-up">
+        <h2 data-aos="fade-down">¿Estás interesado en adquirir alguna solución de Business Intelligence?</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Contacta a nuestros asesores de ventas para una atención personalizada para tu compra.</p>
+        <div class="cta-button" data-aos="zoom-in" data-aos-delay="400">
             <a href="index.html#contacto" class="btn-primary">
-                ¡Lo quiero en mi empresa!
+            ¡Lo quiero en mi empresa!
             </a>
         </div>
     </section>
@@ -261,6 +237,9 @@
             <p>© 2025 Klammer. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script>
         function toggleMenu() {
@@ -325,6 +304,27 @@
         });
 
         observer.observe(section);
+    });
+
+    AOS.init({
+        duration: 1200,   // duración de animación en ms
+        once: true,       // se anima solo la primera vez
+        easing: 'ease-out-cubic'
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const whySection = document.querySelector(".why-bi");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            whySection.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+        });
+    }, { threshold: 0.4 });
+
+    observer.observe(whySection);
     });
 
     </script>

@@ -9,6 +9,9 @@
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/4381fd86d0.js" crossorigin="anonymous"></script>
 
+    <!-- AOS CSS  -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <link rel="icon" type="image/png" href="assets/img/LOGOTIPO/LogosSF/klammer_icono.png">
 </head>
 <body>
@@ -31,9 +34,7 @@
                         <li><a href="desarrolloSoftware.html" onclick="closeMenu()">Desarrollo de Software</a></li>
                     </ul>
                 </li>
-                <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>
-                <!-- <li><a href="#blog" onclick="closeMenu()">Blog</a></li> -->
-                <li><a href="#contacto" class="btn-contacto" onclick="closeMenu()">Contacto</a></li>
+                <li><a href="#nosotros" onclick="closeMenu()">Nosotros</a></li>                <li><a href="#contacto" class="btn-contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -65,35 +66,54 @@
 
     <!-- Benefits Section -->
     <section class="benefits-wrapper">
-        <div class="benefits">
-            <h2>¿Qué significa esto?</h2>
+        <div class="benefits" data-aos="fade-up" data-aos-duration="1000">
+            <h2 data-aos="fade-down" data-aos-delay="200">¿Qué significa esto?</h2>
+
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-                    <h3>Mejor toma de decisiones</h3>
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                        <h3>Mejor toma de decisiones</h3>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Productividad y efectividad</h3>
+
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Productividad y efectividad</h3>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-user-group"></i></div>
-                    <h3>Mejor servicio al cliente</h3>
+
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-user-group"></i></div>
+                        <h3>Mejor servicio al cliente</h3>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>Más rentabilidad</h3>
+
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-database"></i></div>
+                        <h3>Más rentabilidad</h3>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-microchip"></i></div>
-                    <h3>Escalabilidad</h3>
+
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>Escalabilidad</h3>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Anticipa tendencias</h3>
+
+                <div class="benefit-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="benefit-card-inner">
+                        <div class="benefit-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Anticipa tendencias</h3>
+                    </div>
                 </div>
             </div>
-            <div class="cta-button">
+
+            <div class="cta-button" data-aos="fade-up" data-aos-delay="700">
                 <a href="#contacto" class="btn-primary">Comienza tu transformación digital</a>
             </div>
         </div>
@@ -101,70 +121,82 @@
 
     <!-- Solutions Section -->
     <section id="soluciones" class="solutions">
-        <h2>Nuestras Soluciones</h2>
-        <p class="solutions-subtitle">Tecnología de vanguardia para transformar tu negocio</p>
+        <h2 data-aos="fade-down" data-aos-duration="1000">Nuestras Soluciones</h2>
+        <p class="solutions-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Tecnología de vanguardia para transformar tu negocio
+        </p>
         <div class="solutions-grid">
-            <div class="solution-card">
-                <div class="solution-icon"><i class="fa-solid fa-brain"></i></div>
-                <h3>Inteligencia de Negocios</h3>
-                <!-- <p>Transforma datos complejos en información valiosa para tomar decisiones estratégicas. 
-                    Dashboards interactivos, reportes automatizados y análisis predictivo que impulsan el crecimiento de tu empresa.</p> -->
+            <div class="solution-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                <div class="solution-card-inner">
+                    <div class="solution-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Inteligencia de Negocios</h3>
                     <div class="cta-button">
                         <a href="inteligenciaNegocios.html" class="btn-secondary">Ver más</a>
                     </div>
+                </div>
             </div>
-            <div class="solution-card">
-                <div class="solution-icon"><i class="fa-solid fa-robot"></i></div>
-                <h3>Automatización Robótica de Procesos</h3>
-                <!-- <p>Libera a tu equipo de tareas repetitivas con robots de software inteligentes. 
-                    Aumenta la eficiencia operativa, reduce errores y optimiza recursos mientras tu personal se enfoca en lo realmente importante.</p> -->
+
+            <div class="solution-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                <div class="solution-card-inner">
+                    <div class="solution-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Automatización Robótica de Procesos</h3>
                     <div class="cta-button">
                         <a href="rpa.html" class="btn-secondary">Ver más</a>
                     </div>
+                </div>
             </div>
-            <div class="solution-card">
-                <div class="solution-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3>Desarrollo de Software</h3>
-                <!-- <p>Soluciones tecnológicas a medida que se adaptan perfectamente a las necesidades únicas de tu negocio. 
-                    Desde aplicaciones web hasta sistemas empresariales completos, construidos con las últimas tecnologías.</p> -->
+
+            <div class="solution-card" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                <div class="solution-card-inner">
+                    <div class="solution-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Desarrollo de Software</h3>
                     <div class="cta-button">
                         <a href="desarrolloSoftware.html" class="btn-secondary">Ver más</a>
                     </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="nosotros" class="about">
-        <h2>Nosotros</h2>
-        <p class="about-subtitle">Expertos en transformación digital y soluciones empresariales</p>
+        <h2 data-aos="fade-down" data-aos-duration="1000">Nosotros</h2>
+        <p class="about-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Expertos en transformación digital y soluciones empresariales
+        </p>
         <div class="about-container">
-            <div class="about-text">
+            <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                 <p>En <strong>Klammer</strong>, somos un equipo de profesionales apasionados por la tecnología y la innovación. Nos especializamos en desarrollar soluciones tecnológicas que transforman la manera en que las empresas operan y toman decisiones.</p>
                 <br>
                 <p>Con años de experiencia en el mercado, entendemos los desafíos únicos que enfrentan las organizaciones modernas. Nuestro enfoque combina expertise técnico de clase mundial con un profundo entendimiento del negocio, garantizando soluciones que no solo funcionan, sino que generan valor real y medible.</p>
             </div>
             <div class="about-cards">
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <div class="about-card-icon"><i class="fa-solid fa-bullseye"></i></div>
-                        <h3>Nuestra Misión</h3>
+                <div class="about-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="400">
+                    <div class="about-card-inner">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Nuestra Misión</h3>
+                        </div>
+                        <p>Empoderar a las empresas con tecnología de vanguardia que impulsa su crecimiento y competitividad en el mercado global.</p>
                     </div>
-                    <p>Empoderar a las empresas con tecnología de vanguardia que impulsa su crecimiento y competitividad en el mercado global.</p>
                 </div>
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <div class="about-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h3>Nuestra Visión</h3>
+                <div class="about-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="500">
+                    <div class="about-card-inner">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                            <h3>Nuestra Visión</h3>
+                        </div>
+                        <p>Ser el socio tecnológico preferido de las empresas que buscan liderar la transformación digital en sus industrias.</p>
                     </div>
-                    <p>Ser el socio tecnológico preferido de las empresas que buscan liderar la transformación digital en sus industrias.</p>
                 </div>
-                <div class="about-card">
-                    <div class="about-card-header">
-                        <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
-                        <h3>Nuestros Valores</h3>
+                <div class="about-card" data-aos="flip-left" data-aos-duration="800" data-aos-delay="600">
+                    <div class="about-card-inner">
+                        <div class="about-card-header">
+                            <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
+                            <h3>Nuestros Valores</h3>
+                        </div>
+                        <p>Innovación, excelencia, compromiso con el cliente y mejora continua en cada proyecto que emprendemos.</p>
                     </div>
-                    <p>Innovación, excelencia, compromiso con el cliente y mejora continua en cada proyecto que emprendemos.</p>
                 </div>
             </div>
         </div>
@@ -172,81 +204,65 @@
 
     <!-- Clients Section -->
     <section class="clients">
-        <h2>Nuestros Clientes</h2>
-        <p class="clients-subtitle">Confianza de empresas líderes en diversos sectores</p>
+        <h2 data-aos="fade-down" data-aos-duration="1000">Nuestros Clientes</h2>
+        <p class="clients-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            Confianza de empresas líderes en diversos sectores
+        </p>
 
-        <div class="slider slider-left">
+        <div class="slider slider-left" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
             <div class="slide-track">
-                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
-                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
 
                 <!-- duplicados para efecto infinito -->
-                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
-                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
             </div>
         </div>
 
-        <div class="slider slider-right">
+        <div class="slider slider-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
             <div class="slide-track">
-                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
-                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
 
                 <!-- duplicados para efecto infinito -->
-                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros"
-                        class="aliados-logo-image"></div>
-                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español"
-                        class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/energeticos.png" alt="Energeticos Nieto" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
             </div>
         </div>
 
-        <p class="clients-footer">Hemos trabajado con empresas de todos los tamaños, desde startups innovadoras hasta corporaciones multinacionales.</p>
-        <p class="clients-commitment">Nuestro compromiso: resultados medibles y relaciones a largo plazo</p>
+        <p class="clients-footer" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+            Hemos trabajado con empresas de todos los tamaños, desde startups innovadoras hasta corporaciones multinacionales.
+        </p>
+        <p class="clients-commitment" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+            Nuestro compromiso: resultados medibles y relaciones a largo plazo
+        </p>
     </section>
 
     <!-- Contact Section -->
     <section id="contacto" class="contact">
-        <h2>Contacto</h2>
-        <p class="contact-subtitle">¿Listo para transformar tu negocio? Hablemos</p>
+        <h2 data-aos="fade-down" data-aos-duration="1000">Contacto</h2>
+        <p class="contact-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            ¿Listo para transformar tu negocio? Hablemos
+        </p>
         <div class="contact-container">
-            <div class="contact-info">
+            <div class="contact-info" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                 <h3>Información de Contacto</h3>
                 <div class="contact-item">
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
@@ -262,7 +278,7 @@
                         <p>871 221 8386</p>
                     </div>
                 </div>
-                
+
                 <div class="why-us">
                     <h4>¿Por qué elegirnos?</h4>
                     <ul>
@@ -273,8 +289,9 @@
                     </ul>
                 </div>
             </div>
-            
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Te contactaremos pronto.');">
+
+            <form class="contact-form" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400"
+                onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Te contactaremos pronto.');">
                 <div class="form-group">
                     <label for="nombre">Nombre *</label>
                     <input type="text" id="nombre" placeholder="Tu nombre completo" required>
@@ -326,96 +343,80 @@
         </div>
     </footer>
 
+    <!-- Librerías AOS, GSAP y ScrollTrigger -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Script principal -->
     <script>
-        // Toggle menu móvil
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Header scroll
-        let lastScroll = 0;
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
+        document.addEventListener("DOMContentLoaded", () => {
+            // Menú móvil
+            function toggleMenu() {
+                document.getElementById('navLinks').classList.toggle('active');
             }
-            
-            lastScroll = currentScroll;
-        });
+            function closeMenu() {
+                document.getElementById('navLinks').classList.remove('active');
+            }
 
-        // Solo desactivar el hover del submenu en móviles
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const headerOffset = 80;
+                        const offsetPosition = target.offsetTop - headerOffset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
 
-        const submenuLinks = document.querySelectorAll('.submenu > a');
+            // Header animado
+            let lastScroll = 0;
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                header.style.transform = currentScroll > lastScroll && currentScroll > 100
+                    ? 'translateY(-100%)'
+                    : 'translateY(0)';
+                lastScroll = currentScroll;
+            });
 
-        submenuLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (isMobile()) {
-                    // Cierra el menú y navega normalmente
-                    closeMenu();
-                }
+            // Submenús
+            const isMobile = () => window.innerWidth <= 768;
+            const submenuLinks = document.querySelectorAll('.submenu > a');
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', e => { if (isMobile()) closeMenu(); });
+            });
+
+            const submenus = document.querySelectorAll('.submenu');
+            submenus.forEach(submenu => {
+                const dropdown = submenu.querySelector('.dropdown');
+                let timeout;
+                const showDropdown = () => {
+                    clearTimeout(timeout);
+                    dropdown.style.opacity = '1';
+                    dropdown.style.pointerEvents = 'auto';
+                    dropdown.style.transform = 'translateX(-50%) translateY(5px)';
+                };
+                const hideDropdown = () => {
+                    timeout = setTimeout(() => {
+                        dropdown.style.opacity = '0';
+                        dropdown.style.pointerEvents = 'none';
+                        dropdown.style.transform = 'translateX(-50%) translateY(0)';
+                    }, 300);
+                };
+                submenu.addEventListener('mouseenter', showDropdown);
+                submenu.addEventListener('mouseleave', hideDropdown);
+                dropdown.addEventListener('mouseenter', showDropdown);
+                dropdown.addEventListener('mouseleave', hideDropdown);
+            });
+
+            // Inicialización de AOS
+            AOS.init({
+                once: true,
+                offset: 100,
             });
         });
-
-        const submenus = document.querySelectorAll('.submenu');
-
-        submenus.forEach(submenu => {
-            const dropdown = submenu.querySelector('.dropdown');
-            let timeout;
-
-            const showDropdown = () => {
-                clearTimeout(timeout);
-                dropdown.style.opacity = '1';
-                dropdown.style.pointerEvents = 'auto';
-                dropdown.style.transform = 'translateX(-50%) translateY(5px)';
-            };
-
-            const hideDropdown = () => {
-                timeout = setTimeout(() => {
-                    dropdown.style.opacity = '0';
-                    dropdown.style.pointerEvents = 'none';
-                    dropdown.style.transform = 'translateX(-50%) translateY(0)';
-                }, 300); // delay antes de ocultar
-            };
-
-            // Mantener visible mientras el mouse esté sobre el botón o el dropdown
-            submenu.addEventListener('mouseenter', showDropdown);
-            submenu.addEventListener('mouseleave', hideDropdown);
-            dropdown.addEventListener('mouseenter', showDropdown);
-            dropdown.addEventListener('mouseleave', hideDropdown);
-        });
-
     </script>
 </body>
 </html>

@@ -374,29 +374,48 @@
     }
 
     .benefit-card {
-        /* background-color: var(--color-blanco); */ /* Color del card */
-        padding: 2rem; /* Espacio interno dentro del elemento */
-        border-radius: 10px; /* Redondea el borden del card */
-        text-align: center; /* Centra el texto y los iconos */
-        /* box-shadow: 0 2px 10px rgba(0,0,0,0.8); */ /* Sombra del borde */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animacion elementos */
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease;
+        /* Hover se moverá al inner */
     }
 
-    .benefit-card:hover {
-        transform: scale(1.25); /* Animacion de aumento de tamaño */ /* translateY(-5px); */ /* Movimiento hacia arriba al colocar el cursor */
-        /* box-shadow: 0 4px 20px rgba(0,0,0,0.15); */ /* Elimina la sombra al hacer la animación */
+    .benefit-card-inner {
+        background-color: var(--color-blanco);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+        cursor: pointer;
+    }
+
+    .benefit-card-inner:hover {
+        transform: translateY(-10px) scale(1.1);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        background-color: #fef9f1; /* ligero cambio de color al hover */
     }
 
     .benefit-icon {
         font-size: 3rem; /* Tamaño de los iconos */
         color: var(--color-amarillo-pure); /* Color interno de iconos */
         margin-bottom: 1rem; /* Margen inferior */
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .benefit-card-inner:hover .benefit-icon {
+        transform: rotate(-10deg) scale(1.2);
+        color: #f5b700; /* un amarillo más intenso */
     }
 
     .benefit-card h3 {
         color: var(--color-azul-energy); /* Color de texto h3 */
-        font-size: 1.1rem; /* Tamaño de fuente */
+        font-size: 1.15rem; /* Tamaño de fuente */
         font-weight: bold; /* Ancho de fuente */
+        transition: color 0.3s ease;
+    }
+
+    .benefit-card-inner:hover h3 {
+        color: var(--color-azul-deep);
     }
 
     .cta-button {
@@ -413,11 +432,13 @@
         text-decoration: none; /* Elimina la decoración del texto */
         font-weight: bold; /* Ancho en bold */
         font-size: 1.05rem; /* Tamaño del font */
-        transition: background-color 0.3s; /* Color al realizar transición */
+        transition: all 0.3s ease; /* Color al realizar transición */
     }
 
     .btn-primary:hover {
         background-color: var(--color-azul-deep); /* Color del boton al hacer transición */
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     /* Nuestras soluciones */
@@ -450,42 +471,79 @@
     }
 
     .solution-card {
-        background-color: var(--color-blanco-ostion); /* Color de los cards */
-        padding: 2.5rem; /* Espacio interior de los cards */
-        border-radius: 10px; /* Borde redondeado de los cards */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Sombra de card */
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
 
-        display: flex;           /* Hacemos flex para organizar contenido */
-        flex-direction: column;  /* Columna vertical */
-        justify-content: space-between; /* Espacio entre contenido y botón */
-        height: 100%;            /* Para que todas las cards tengan igual altura */
+    .solution-card-inner {
+        background-color: var(--color-blanco-ostion);
+        border-radius: 12px;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+        cursor: pointer;
+    }
+
+    .solution-card-inner:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        background-color: #fef9f1;
     }
 
     .solution-icon {
-        width: 60px; /* Ancho del icono */
-        height: 60px; /* Alto del icono */
-        background-color: var(--color-blanco-mixto); /* Color de fondo del icono */
-        border-radius: 50%; /* Borde redondeado */
-        display: flex; /* Contenedor flexible para alinear y distribuir el item */
-        align-items: center; /* Centra el icono en altura */
-        justify-content: center; /* Centra el icono en ancho */
-        margin: 0 auto 1.5rem; /* Margen que ayuda a centrar el icono */
-        font-size: 2rem; /* Tamaño del icono */
-        color: var(--color-amarillo-pure); /* Color */
+        width: 60px;
+        height: 60px;
+        background-color: var(--color-blanco-mixto);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+        color: var(--color-amarillo-pure);
+        transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .solution-card-inner:hover .solution-icon {
+        transform: rotate(-10deg) scale(1.2);
+        color: #f5b700;
+        box-shadow: 0 0 15px rgba(245, 183, 0, 0.6);
     }
 
     .solution-card h3 {
-        color: var(--color-azul-energy); /* Color de texto h3 */
-        font-size: 1.3rem; /* Tamaño de fuente del texto */
-        margin-bottom: 1rem; /* Margen inferior */
-        text-align: center; /* Centra el texto */
+        color: var(--color-azul-energy);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        transition: color 0.3s ease;
     }
 
-    .solution-card p {
-        color: var(--color-azul-energy); /* Color de los parrafos */
-        font-size: 0.95rem; /* Tamaño de la fuente */
-        text-align: center; /* Centra el texto */
-        line-height: 1.6; /* Distancia vertical entre lineas */
+    .solution-card-inner:hover h3 {
+        color: var(--color-azul-deep);
+    }
+
+    /* CTA button dentro de las soluciones */
+    .cta-button a.btn-secondary {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--color-azul-energy);
+        background-color: #fff;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .solution-card-inner:hover .cta-button a.btn-secondary {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background-color: var(--color-amarillo-pure);
+        color: #fff;
     }
 
     /* Nosotros */
@@ -533,39 +591,62 @@
     }
 
     .about-card {
-        background-color: var(--color-blanco); /* Color del card */
-        padding: 2rem; /* Espacio interno del card */
-        border-radius: 10px; /* Borde redondeado */
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Sombra del borde del card */
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
     }
 
-    .about-card-header {
-        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
-        align-items: center; /* Centra los elementos */
-        gap: 1rem; /* Espacio entre icono y texto */
-        margin-bottom: 1rem; /* Margen inferior */
+    .about-card-inner {
+        background-color: var(--color-blanco);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+        cursor: pointer;
+    }
+
+    .about-card-inner:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        background-color: #fef9f1;
     }
 
     .about-card-icon {
-        width: 50px; /* Ancho de icono */
-        height: 50px; /* Alto de icono */
-        background-color: var(--color-amarillo-pure); /* Color fondo de icono */
-        border-radius: 50%; /* Borde redondeado */
-        display: flex; /* Contenedor flexible que alinea y organiza los elementos */
-        align-items: center; /* Alinea icono verticalmente */
-        justify-content: center; /* Alinea icono horizontalmente */
-        font-size: 1.5rem; /* Tamaño de icono */
-        color: var(--color-blanco); /* Color de icono */
+        width: 50px;
+        height: 50px;
+        background-color: var(--color-amarillo-pure);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--color-blanco);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card-inner:hover .about-card-icon {
+        transform: rotate(-10deg) scale(1.2);
+        box-shadow: 0 0 15px rgba(245, 183, 0, 0.6);
     }
 
     .about-card h3 {
-        color: var(--color-azul-energy); /* Color del titulo acerca de */
-        font-size: 1.2rem; /* Tamaño de la fuente h3 */
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .about-card-inner:hover h3 {
+        color: var(--color-azul-deep);
     }
 
     .about-card p {
-        color: var(--color-azul-energy); /* Color del texto p */
-        line-height: 1.6; /* Espacio entre lineas */
+        color: var(--color-azul-energy);
+        line-height: 1.6;
+        transition: color 0.3s ease;
+    }
+
+    .about-card-inner:hover p {
+        color: #333; /* Más contraste al hover */
     }
 
     /* Nuestros Clientes */

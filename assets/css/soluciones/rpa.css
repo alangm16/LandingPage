@@ -138,11 +138,18 @@
     }
 
     /* Sección: ¿Qué es? */
+    /* -------------------- */
+    /* Sección: ¿Qué es? animada */
+    /* -------------------- */
+
     .rpa-que-es-nosotros {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+        padding: 5rem 2rem;
+        background: var(--color-blanco-mixto);
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Grid */
     .rpa-content-wrapper {
         max-width: 1200px;
         margin: 0 auto;
@@ -152,68 +159,39 @@
         align-items: center;
     }
 
+    /* Columna izquierda */
     .rpa-left-column {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .rpa-left-column h1 {
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         margin-bottom: 0;
         text-align: center;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .rpa-card-spacing {
-        margin-top: 0.5rem;
+    .rpa-left-column h1:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
     }
 
-    .rpa-right-column {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 2rem;
-    }
-
-    .rpa-icons-container {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        width: 100%;
-        max-width: 450px;
-    }
-
-    .rpa-icon-item {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-    .rpa-icon-circle {
-        width: 80px;
-        height: 80px;
-        background-color: var(--color-amarillo-pure);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-        color: var(--color-azul-energy);
-        flex-shrink: 0;
-    }
-
-    .rpa-icon-item span {
-        color: var(--color-azul-energy);
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-
+    /* Cards */
     .rpa-info-card {
         background-color: var(--color-blanco-mixto);
-        padding: 1.5rem;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    }
+
+    .rpa-info-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        background-color: #fffef3;
     }
 
     .rpa-info-card p {
@@ -221,129 +199,294 @@
         font-size: 1.05rem;
         line-height: 1.8;
         margin: 0;
-        text-align: left;
     }
 
-    /* Animación iconos */
-    .animate .rpa-icon-item:nth-of-type(1) {
-        animation: slideInRight 0.6s ease forwards;
-        animation-delay: 0.2s;
+    /* Columna derecha: ecuación */
+    .rpa-right-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2rem;
     }
 
-    .animate .rpa-icon-item:nth-of-type(2) {
-        animation: slideInRight 0.6s ease forwards;
-        animation-delay: 0.4s;
+    .rpa-equation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        justify-content: center;
+        align-items: center;
     }
 
-    .animate .rpa-icon-item:nth-of-type(3) {
-        animation: slideInRight 0.6s ease forwards;
-        animation-delay: 0.6s;
+    /* Items de ecuación */
+    .rpa-equation-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
+    .rpa-equation-item:hover {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .rpa-equation-icon {
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at top left, var(--color-amarillo-pure), var(--color-blanco));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+        animation: iconPulse 3s infinite ease-in-out;
+    }
+
+    /* Pulso de iconos */
+    @keyframes iconPulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.4);
         }
-        to {
-            opacity: 1;
-            transform: translateX(0);
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,230,80,0.5);
         }
     }
 
-    /* Sección: ¿Por qué RPA? */
+    /* Operadores */
+    .rpa-equation-operator {
+        font-size: 2rem;
+        color: var(--color-azul-energy);
+        font-weight: bold;
+    }
+
+    /* Último item resultado */
+    .rpa-equation-item.result .rpa-equation-icon {
+        background: radial-gradient(circle at top left, var(--color-azul-energy), var(--color-blanco-mixto));
+        color: var(--color-amarillo-pure);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .rpa-content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        .rpa-right-column {
+            padding-top: 2rem;
+        }
+    }
+
+    /* -------------------- */
+    /* Sección: ¿Por qué RPA? animada */
+    /* -------------------- */
+
     .why-rpa {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco);
+        padding: 5rem 2rem;
+        background: var(--color-blanco);
+        position: relative;
+        overflow: hidden;
     }
 
     .why-rpa h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
+        font-size: 2.4rem;
+        margin-bottom: 3.5rem;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .why-rpa h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* Grid */
     .why-rpa-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 3rem;
     }
 
+    /* Cards */
     .why-rpa-item {
         background-color: var(--color-blanco-ostion);
-        padding: 2rem;
-        border-radius: 10px;
+        padding: 2.5rem 1.8rem;
+        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         border-left: 4px solid var(--color-amarillo-pure);
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Card hover */
     .why-rpa-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        background-color: #fffef3;
     }
 
+    /* Efecto shimmer en hover */
+    .why-rpa-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .why-rpa-item:hover::after {
+        left: 100%;
+    }
+
+    /* Íconos */
     .why-rpa-icon {
-        width: 70px;
-        height: 70px;
-        background-color: var(--color-blanco-mixto);
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1rem;
-        font-size: 2rem;
+        margin: 0 auto 1.2rem;
+        font-size: 2.2rem;
+        color: var(--color-amarillo-pure);
+        box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: iconPulse 3s infinite ease-in-out;
+    }
+
+    .why-rpa-item:hover .why-rpa-icon {
+        transform: rotate(10deg) scale(1.1);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 25px rgba(255,230,100,0.6);
+    }
+
+    /* Titles inside cards */
+    .why-rpa-item h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.25rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .why-rpa-item:hover h3 {
         color: var(--color-amarillo-pure);
     }
 
-    .why-rpa-item h3 {
-        color: var(--color-azul-energy);
-        font-size: 1.2rem;
-        font-weight: bold;
+    /* Animación íconos (pulso) */
+    @keyframes iconPulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+        }
+    }
+
+    /* Último card centrado si es impar */
+    .why-rpa-grid > .why-rpa-item:nth-child(odd):last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .why-rpa-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Sección: ¿Cómo funciona? */
     .how-it-works {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+        padding: 5rem 2rem;
+        background: var(--color-blanco-mixto);
     }
 
     .how-it-works h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         margin-bottom: 3rem;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .how-it-works h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* Descripciones */
+    .description-how-it-works {
+        max-width: 900px;
+        margin: 0 auto 2rem;
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+    }
+
+    /* Grid de cards */
     .how-it-works-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        gap: 2.5rem;
+        padding-bottom: 1rem;
     }
 
+    /* Cards */
     .how-card {
-        background-color: var(--color-blanco);
+        background-color: var(--color-blanco-ostion);
         padding: 2.5rem;
-        border-radius: 10px;
+        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Hover dinámico */
     .how-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        background-color: #fffef3;
     }
 
+    /* Efecto shimmer */
+    .how-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .how-card:hover::after {
+        left: 100%;
+    }
+
+    /* Íconos */
     .how-card-icon {
         width: 80px;
         height: 80px;
-        background-color: var(--color-blanco-mixto);
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -351,19 +494,54 @@
         margin: 0 auto 1.5rem;
         font-size: 2.5rem;
         color: var(--color-amarillo-pure);
+        box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: iconPulse 3s infinite ease-in-out;
     }
 
+    .how-card:hover .how-card-icon {
+        transform: rotate(10deg) scale(1.1);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 25px rgba(255,230,100,0.6);
+    }
+
+    /* Titles */
     .how-card h3 {
         color: var(--color-azul-energy);
         font-size: 1.3rem;
         margin-bottom: 1rem;
-        font-weight: bold;
+        font-weight: 600;
+        transition: color 0.3s ease;
     }
 
+    .how-card:hover h3 {
+        color: var(--color-amarillo-pure);
+    }
+
+    /* Párrafos */
     .how-card p {
         color: var(--color-azul-energy);
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.6;
+    }
+
+    /* Animación íconos */
+    @keyframes iconPulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .how-it-works-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Sección: Beneficios */
@@ -379,6 +557,7 @@
         margin-bottom: 3rem;
     }
 
+    /* Beneficios */
     .rpa-benefits-grid {
         max-width: 1200px;
         margin: 0 auto;
@@ -390,13 +569,16 @@
     .rpa-benefit-card {
         background-color: var(--color-blanco-ostion);
         padding: 2rem;
-        border-radius: 10px;
+        border-radius: 12px;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+        cursor: pointer;
     }
 
     .rpa-benefit-card:hover {
-        transform: scale(1.05);
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        background-color: #fffef3;
     }
 
     .rpa-benefit-icon {
@@ -408,15 +590,38 @@
         justify-content: center;
         font-size: 3rem;
         color: var(--color-amarillo-pure);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: pulseIcon 3s infinite ease-in-out;
+    }
+
+    .rpa-benefit-card:hover .rpa-benefit-icon {
+        transform: scale(1.2) rotate(10deg);
+        box-shadow: 0 0 20px rgba(255,230,100,0.6);
     }
 
     .rpa-benefit-card h3 {
         color: var(--color-azul-energy);
         font-size: 1.1rem;
         font-weight: bold;
+        transition: color 0.3s ease;
     }
 
-    /* Sección: CTA Final */
+    .rpa-benefit-card:hover h3 {
+        color: var(--color-amarillo-pure);
+    }
+
+    @keyframes pulseIcon {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+        }
+    }
+
+    /* CTA Final */
     .rpa-cta-final {
         padding: 4rem 2rem;
         background-color: var(--color-blanco-ostion);
@@ -430,6 +635,12 @@
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .rpa-cta-final h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
     }
 
     .rpa-cta-final p {
@@ -454,11 +665,20 @@
         text-decoration: none;
         font-weight: bold;
         font-size: 1.05rem;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn-primary:hover {
         background-color: var(--color-azul-deep);
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .rpa-benefits-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Ecuación visual en la sección ¿Qué es? */

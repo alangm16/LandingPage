@@ -137,102 +137,121 @@
         font-style: italic;
     }
 
-    /* Sección: ¿Qué es? y Nosotros combinadas */
+    /* ---- Que-es Nosotros ---- */
     .bi-que-es-nosotros {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+    padding: 4rem 2rem;
+    background-color: var(--color-blanco-mixto);
+    position: relative;
+    overflow: hidden;
+    }
+
+    .bi-que-es-nosotros::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255, 235, 59, 0.1), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
     }
 
     .bi-content-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
     }
 
     .bi-left-column {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     }
 
     .bi-left-column h1 {
-        color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 0;
-        text-align: center;
+    color: var(--color-azul-energy);
+    font-size: 2.4rem;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .bi-card-spacing {
-        margin-top: 0.5rem;
+    .bi-left-column h1:hover {
+    transform: scale(1.05);
+    color: #F7D600;
     }
 
+    /* ---- Tarjetas ---- */
+    .bi-info-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    }
+
+    .bi-info-card:hover {
+    transform: scale(1.02);
+    background-color: #fdfae3;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ---- Gráfica ---- */
     .bi-right-column {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
     }
 
     .bi-chart {
-        width: 100%;
-        max-width: 450px;
-        background-color: var(--color-blanco-mixto);
-        padding: 2rem;
-        /* border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f2f5ff);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transform-origin: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .bi-info-card {
-        background-color: var(--color-blanco-mixto);
-        padding: 1.5rem;
-        /* border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08); */
+    .bi-chart:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    .bi-info-card p {
-        color: var(--color-azul-energy);
-        font-size: 1.05rem;
-        line-height: 1.8;
-        margin: 0;
-        text-align: left;
-    }
-
-    /* Animación barras */
-
+    /* ---- Animación SVG ---- */
     .bar {
-        transform: scaleY(0);
-        transform-origin: bottom;
+    transform: scaleY(0);
+    transform-origin: bottom;
     }
 
-    /* Línea de tendencia preparada */
     .line-trend {
-        stroke-dasharray: 600;
-        stroke-dashoffset: 600;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
     }
 
-    /* Puntos preparados */
     .line-point {
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: center;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
     }
 
-    /* Animación activada */
+    /* Activación */
     .animate .bar {
-        animation: growBar 1s ease-out forwards;
+    animation: growBar 1s ease-out forwards;
     }
-
     .animate .bar:nth-of-type(1) { animation-delay: 0.2s; }
     .animate .bar:nth-of-type(2) { animation-delay: 0.4s; }
     .animate .bar:nth-of-type(3) { animation-delay: 0.6s; }
     .animate .bar:nth-of-type(4) { animation-delay: 0.8s; }
 
     .animate .line-trend {
-        animation: drawLine 1.5s ease forwards;
-        animation-delay: 1s;
+    animation: drawLine 1.5s ease forwards;
+    animation-delay: 1s;
     }
 
     .animate .line-point:nth-of-type(1) { animation: showPoint 0.5s ease forwards; animation-delay: 2.5s; }
@@ -240,211 +259,508 @@
     .animate .line-point:nth-of-type(3) { animation: showPoint 0.5s ease forwards; animation-delay: 2.9s; }
     .animate .line-point:nth-of-type(4) { animation: showPoint 0.5s ease forwards; animation-delay: 3.1s; }
 
+    /* Keyframes */
     @keyframes growBar {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
+    from { transform: scaleY(0); fill: #F7D600; }
+    to { transform: scaleY(1); fill: #ffec3d; }
     }
 
     @keyframes drawLine {
-        from { stroke-dashoffset: 600; }
-        to { stroke-dashoffset: 0; }
+    from { stroke-dashoffset: 600; }
+    to { stroke-dashoffset: 0; }
     }
 
     @keyframes showPoint {
-        from { opacity: 0; transform: scale(0); }
-        to { opacity: 1; transform: scale(1); }
+    from { opacity: 0; transform: scale(0); fill: #1F4589; }
+    to { opacity: 1; transform: scale(1.1); fill: #0a2c6d; }
     }
 
-
-    /* Sección: ¿Por qué BI? */
+    /* -------------------- */
+    /* Sección: ¿Por qué BI? (2 columnas) */
+    /* -------------------- */
     .why-bi {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco);
+    padding: 5rem 2rem;
+    background: var(--color-blanco);
+    position: relative;
+    overflow: hidden;
     }
 
     .why-bi h2 {
-        text-align: center;
-        color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
+    text-align: center;
+    color: var(--color-azul-energy);
+    font-size: 2.4rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .why-bi h2:hover {
+    transform: scale(1.05);
+    color: var(--color-amarillo-pure);
+    }
+
+    /* -------- GRID DOS COLUMNAS -------- */
     .why-bi-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
     }
 
     .why-bi-item {
-        background-color: var(--color-blanco-ostion);
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-left: 4px solid var(--color-amarillo-pure);
+    background-color: var(--color-blanco-ostion);
+    padding: 2.5rem 1.8rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--color-amarillo-pure);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .why-bi-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s ease;
+    }
+
+    /* Centrar el último card cuando hay un número impar de elementos */
+    .why-bi-item:last-child {
+        grid-column: 1 / -1;
+        justify-self: center; /* centra el contenido en el espacio */
+        max-width: 480px; /* opcional: limita el ancho para que no se vea muy grande */
+    }
+
+    .why-bi-item:hover::after {
+    left: 100%;
     }
 
     .why-bi-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    background-color: #fffef3;
     }
 
+    /* -------- ÍCONOS -------- */
     .why-bi-icon {
-        width: 70px;
-        height: 70px;
-        background-color: var(--color-blanco-mixto);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1rem;
-        font-size: 2rem;
-        color: var(--color-amarillo-pure);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    font-size: 2.2rem;
+    color: var(--color-amarillo-pure);
+    box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+    animation: iconPulse 3s infinite ease-in-out;
     }
 
+    .why-bi-item:hover .why-bi-icon {
+    transform: rotate(10deg) scale(1.1);
+    color: var(--color-azul-energy);
+    box-shadow: 0 0 25px rgba(255, 230, 100, 0.6);
+    }
+
+    /* -------- TÍTULOS -------- */
     .why-bi-item h3 {
-        color: var(--color-azul-energy);
-        font-size: 1.2rem;
-        font-weight: bold;
+    color: var(--color-azul-energy);
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
     }
 
+    .why-bi-item:hover h3 {
+    color: var(--color-amarillo-pure);
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 900px) {
+    .why-bi-grid {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    /* -------- ANIMACIÓN ÍCONOS -------- */
+    @keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 15px rgba(255, 230, 80, 0.5);
+    }
+    }
+
+    .why-bi.active .why-bi-item {
+    animation: bounceIn 0.6s ease forwards;
+    }
+
+    @keyframes bounceIn {
+    0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+    60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); }
+    }
+
+
+    /* -------------------- */
     /* Sección: ¿Cómo funciona? */
+    /* -------------------- */
+
     .how-it-works {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+        padding: 5rem 2rem;
+        background: var(--color-blanco-mixto);
+        position: relative;
+        overflow: hidden;
     }
 
+    /* -------- TÍTULO -------- */
     .how-it-works h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
+        font-size: 2.4rem;
+        margin-bottom: 3.5rem;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .how-it-works h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* -------- GRID -------- */
     .how-it-works-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        gap: 2.5rem;
+        position: relative;
+        z-index: 1;
     }
 
+    /* -------- CARDS -------- */
     .how-card {
         background-color: var(--color-blanco);
-        padding: 2.5rem;
-        border-radius: 10px;
+        padding: 3rem 2rem;
+        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-top: 4px solid var(--color-amarillo-pure);
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Efecto de brillo al pasar */
+    .how-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: all 0.6s ease;
+    }
+
+    .how-card:hover::after {
+        left: 100%;
+    }
+
+    /* Hover dinámico */
     .how-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        background-color: #fffef3;
     }
 
+    /* -------- ÍCONOS -------- */
     .how-card-icon {
-        width: 80px;
-        height: 80px;
-        background-color: var(--color-blanco-mixto);
+        width: 90px;
+        height: 90px;
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto 1.5rem;
-        font-size: 2.5rem;
+        font-size: 2.6rem;
         color: var(--color-amarillo-pure);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: iconPulseHow 3s infinite ease-in-out;
     }
 
+    /* Icono al pasar */
+    .how-card:hover .how-card-icon {
+        transform: rotate(12deg) scale(1.15);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 25px rgba(255, 230, 100, 0.6);
+    }
+
+    /* -------- TEXTO -------- */
     .how-card h3 {
         color: var(--color-azul-energy);
-        font-size: 1.3rem;
+        font-size: 1.35rem;
         margin-bottom: 1rem;
-        font-weight: bold;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .how-card:hover h3 {
+        color: var(--color-amarillo-pure);
     }
 
     .how-card p {
         color: var(--color-azul-energy);
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.97rem;
+        line-height: 1.7;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+    }
+
+    .how-card:hover p {
+        opacity: 1;
+    }
+
+    /* -------- ANIMACIÓN DE PULSO ICONOS -------- */
+    @keyframes iconPulseHow {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255, 215, 0, 0.4);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255, 230, 80, 0.5);
+        }
+    }
+
+    /* -------- ENTRADA ANIMADA -------- */
+    .how-it-works.active .how-card {
+        animation: bounceInHow 0.6s ease forwards;
+    }
+
+    @keyframes bounceInHow {
+        0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+        60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+        100% { transform: scale(1) translateY(0); }
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+        .how-card {
+            padding: 2.2rem 1.5rem;
+        }
+        .how-card-icon {
+            width: 75px;
+            height: 75px;
+            font-size: 2.1rem;
+        }
     }
 
     /* Sección: Beneficios */
+    /* -------------------- */
+    /* Sección: Beneficios */
+    /* -------------------- */
+
     .bi-benefits {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco);
+        padding: 5rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco) 0%, var(--color-blanco-mixto) 100%);
+        position: relative;
+        overflow: hidden;
     }
 
+    /* -------- TÍTULO -------- */
     .bi-benefits h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
+        font-size: 2.4rem;
+        margin-bottom: 3.5rem;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
+    .bi-benefits h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* -------- GRID -------- */
     .bi-benefits-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        gap: 2.5rem;
+        position: relative;
+        z-index: 1;
     }
 
+    /* -------- CARDS -------- */
     .bi-benefit-card {
         background-color: var(--color-blanco-ostion);
-        padding: 2rem;
-        border-radius: 10px;
+        padding: 2.5rem 1.8rem;
+        border-radius: 16px;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border-top: 4px solid var(--color-amarillo-pure);
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* Brillo al pasar */
+    .bi-benefit-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.6s ease;
+    }
+
+    .bi-benefit-card:hover::after {
+        left: 100%;
+    }
+
+    /* Hover dinámico */
     .bi-benefit-card:hover {
-        transform: scale(1.05);
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        background-color: #fffef3;
     }
 
+    /* -------- ÍCONOS -------- */
     .bi-benefit-icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 1rem;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 3rem;
+        margin: 0 auto 1.2rem;
+        font-size: 2.5rem;
+        color: var(--color-amarillo-pure);
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: iconPulseBenefit 3s infinite ease-in-out;
+    }
+
+    .bi-benefit-card:hover .bi-benefit-icon {
+        transform: rotate(10deg) scale(1.15);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 25px rgba(255, 230, 100, 0.6);
+    }
+
+    /* -------- TEXTO -------- */
+    .bi-benefit-card h3 {
+        color: var(--color-azul-energy);
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .bi-benefit-card:hover h3 {
         color: var(--color-amarillo-pure);
     }
 
-    .bi-benefit-card h3 {
-        color: var(--color-azul-energy);
-        font-size: 1.1rem;
-        font-weight: bold;
+    /* -------- ANIMACIÓN DE PULSO ICONOS -------- */
+    @keyframes iconPulseBenefit {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+        }
     }
 
-    /* Sección: CTA Final */
+    /* -------- ENTRADA ANIMADA -------- */
+    .bi-benefits.active .bi-benefit-card {
+        animation: bounceInBenefit 0.6s ease forwards;
+    }
+
+    @keyframes bounceInBenefit {
+        0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+        60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+        100% { transform: scale(1) translateY(0); }
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+        .bi-benefit-card {
+            padding: 2rem 1.5rem;
+        }
+        .bi-benefit-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 2.2rem;
+        }
+    }
+
+    /* -------------------- */
+    /* Sección: CTA Final Animada */
+    /* -------------------- */
+
     .bi-cta-final {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-ostion);
+        padding: 5rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco-ostion) 0%, var(--color-blanco) 100%);
         text-align: center;
+        position: relative;
+        overflow: hidden;
     }
 
+    /* -------- TÍTULO -------- */
     .bi-cta-final h2 {
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         margin-bottom: 1.5rem;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+        transition: transform 0.4s ease, color 0.3s ease;
     }
 
+    .bi-cta-final h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* -------- TEXTO -------- */
     .bi-cta-final p {
         color: var(--color-azul-energy);
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         line-height: 1.8;
         max-width: 900px;
         margin: 0 auto 2rem;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
     }
 
+    .bi-cta-final p:hover {
+        opacity: 1;
+    }
+
+    /* -------- BOTÓN -------- */
     .cta-button {
         text-align: center;
         margin-top: 2rem;
@@ -455,15 +771,46 @@
         background-color: var(--color-azul-energy);
         color: var(--color-blanco);
         padding: 1rem 2.5rem;
-        border-radius: 5px;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1.05rem;
-        transition: background-color 0.3s;
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transform: scale(1);
     }
 
     .btn-primary:hover {
         background-color: var(--color-azul-deep);
+        transform: scale(1.08) rotate(-1deg);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    /* -------- ANIMACIONES DE ENTRADA -------- */
+    .bi-cta-final.active h2,
+    .bi-cta-final.active p,
+    .bi-cta-final.active .cta-button {
+        animation: bounceInCTA 0.7s ease forwards;
+    }
+
+    @keyframes bounceInCTA {
+        0% { transform: scale(0.95) translateY(20px); opacity: 0; }
+        60% { transform: scale(1.05) translateY(-5px); opacity: 1; }
+        100% { transform: scale(1) translateY(0); }
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+        .bi-cta-final h2 {
+            font-size: 2rem;
+        }
+        .bi-cta-final p {
+            font-size: 1rem;
+        }
+        .btn-primary {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+        }
     }
 
     /* Responsive */
