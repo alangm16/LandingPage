@@ -55,6 +55,7 @@
         line-height: 1.6;
         color: #333;
         background-color: var(--color-blanco-ostion);
+        overflow-x: hidden;
     }
 
 /* Definición de estilos para el Header */
@@ -725,6 +726,20 @@
         transform: translateY(-5px);
     }
 
+    .logo-bg {
+        background-color: #000;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
+    .logo-bg-alt {
+        background-color: #202345;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+
     .aliados-logo-image {
         max-width: 120px;
         max-height: 80px;
@@ -751,7 +766,7 @@
     .slider .slide-track {
         display: flex;
         animation: scroll 40s linear infinite;
-        width: calc(100% * 2);
+        width: calc(100% * 1.5);
     }
 
     .slider-left .slide-track {

@@ -55,6 +55,7 @@
         line-height: 1.6;
         color: #333;
         background-color: var(--color-blanco-ostion);
+        overflow-x: hidden;
     }
 
     /* Estilos específicos para la página de RPA */
@@ -410,15 +411,16 @@
 
     /* Sección: ¿Cómo funciona? */
     .how-it-works {
-        padding: 5rem 2rem;
-        background: var(--color-blanco-mixto);
+        padding: 6rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco-mixto) 0%, var(--color-blanco) 100%);
     }
 
+    /* -------- TÍTULO -------- */
     .how-it-works h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.4rem;
-        margin-bottom: 3rem;
+        font-size: 2.6rem;
+        margin-bottom: 3.5rem;
         transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -430,79 +432,60 @@
     /* Descripciones */
     .description-how-it-works {
         max-width: 900px;
-        margin: 0 auto 2rem;
+        margin: 0 auto 3rem;
         text-align: center;
         color: var(--color-azul-energy);
         font-size: 1.05rem;
         line-height: 1.8;
     }
 
-    /* Grid de cards */
+    /* Grid de iconos */
     .how-it-works-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2.5rem;
-        padding-bottom: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+        justify-items: center;
     }
 
-    /* Cards */
+    /* Items sin card */
     .how-card {
-        background-color: var(--color-blanco-ostion);
-        padding: 2.5rem;
-        border-radius: 16px;
         text-align: center;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease;
         position: relative;
-        overflow: hidden;
+        background: transparent;
+        border: none;
+        transition: transform 0.3s ease;
     }
 
-    /* Hover dinámico */
     .how-card:hover {
-        transform: translateY(-10px) scale(1.03);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        background-color: #fffef3;
+        transform: translateY(-6px);
     }
 
-    /* Efecto shimmer */
-    .how-card::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-        transition: all 0.5s ease;
-    }
-
-    .how-card:hover::after {
-        left: 100%;
-    }
-
-    /* Íconos */
+    /* Iconos circulares */
     .how-card-icon {
-        width: 80px;
-        height: 80px;
-        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
+        width: 140px;
+        height: 140px;
+        background: var(--color-blanco-ostion);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 2.5rem;
+        margin: 0 auto 1.8rem;
+        font-size: 3.2rem;
         color: var(--color-amarillo-pure);
-        box-shadow: 0 0 0 rgba(255,215,0,0.4);
-        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        border: 4px solid rgba(0,0,0,0.15);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
         animation: iconPulse 3s infinite ease-in-out;
     }
 
     .how-card:hover .how-card-icon {
-        transform: rotate(10deg) scale(1.1);
-        color: var(--color-azul-energy);
-        box-shadow: 0 0 25px rgba(255,230,100,0.6);
+        background-color: var(--color-amarillo-pure);
+        color: var(--color-blanco);
+        border-color: rgba(255,230,100,0.8);
+        box-shadow: 0 0 25px rgba(255,230,80,0.6);
+        transform: scale(1.12) rotate(8deg);
     }
 
     /* Titles */
@@ -523,24 +506,70 @@
         color: var(--color-azul-energy);
         font-size: 1rem;
         line-height: 1.6;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
-    /* Animación íconos */
+    /* Card semitransparente para la descripción final */
+    .description-how-it-works-card {
+        max-width: 900px;
+        margin: 3rem auto 0;
+        padding: 2rem 2.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(255,243,210,0.8), rgba(255,235,180,0.6));
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        backdrop-filter: blur(8px);
+        color: var(--color-azul-energy);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .description-how-it-works-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Animación pulso iconos */
     @keyframes iconPulse {
         0%, 100% {
             transform: scale(1);
-            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+            box-shadow: 0 0 0 rgba(255,215,0,0.3);
         }
         50% {
             transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+            box-shadow: 0 0 20px rgba(255,230,80,0.5);
         }
     }
 
     /* Responsive */
-    @media (max-width: 900px) {
+    @media (max-width: 968px) {
         .how-it-works-grid {
             grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .how-card-icon {
+            width: 120px;
+            height: 120px;
+            font-size: 2.8rem;
+        }
+
+        .how-card h3 {
+            font-size: 1.25rem;
+        }
+
+        .how-card p {
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .how-card-icon {
+            width: 100px;
+            height: 100px;
+            font-size: 2.5rem;
         }
     }
 
@@ -557,52 +586,87 @@
         margin-bottom: 3rem;
     }
 
-    /* Beneficios */
+    /* Sección: Beneficios RPA */
+
+    .rpa-benefits {
+        padding: 6rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco) 0%, var(--color-blanco-mixto) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* -------- TÍTULO -------- */
+    .rpa-benefits h2 {
+        text-align: center;
+        color: var(--color-azul-energy);
+        font-size: 2.6rem;
+        margin-bottom: 4rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .rpa-benefits h2:hover {
+        transform: scale(1.05);
+        color: var(--color-amarillo-pure);
+    }
+
+    /* -------- GRID -------- */
     .rpa-benefits-grid {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
     }
 
+    /* -------- ITEMS -------- */
     .rpa-benefit-card {
-        background-color: var(--color-blanco-ostion);
-        padding: 2rem;
-        border-radius: 12px;
+        padding: 4rem 2.5rem;
         text-align: center;
-        transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
-        cursor: pointer;
+        border-right: 3px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: transparent;
     }
 
-    .rpa-benefit-card:hover {
-        transform: translateY(-8px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        background-color: #fffef3;
+    /* Eliminar borde derecho de la última columna */
+    .rpa-benefit-card:nth-child(3n) {
+        border-right: none;
     }
 
+    /* Eliminar borde inferior de la última fila */
+    .rpa-benefit-card:nth-child(n+4) {
+        border-bottom: none;
+    }
+
+    /* -------- ICONOS -------- */
     .rpa-benefit-icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 1rem;
+        width: 110px;
+        height: 110px;
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 auto 1.8rem;
         font-size: 3rem;
         color: var(--color-amarillo-pure);
         transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
-        animation: pulseIcon 3s infinite ease-in-out;
+        animation: iconPulseHow 3s infinite ease-in-out;
     }
 
+    /* Hover dinámico igual que en las otras secciones */
     .rpa-benefit-card:hover .rpa-benefit-icon {
-        transform: scale(1.2) rotate(10deg);
-        box-shadow: 0 0 20px rgba(255,230,100,0.6);
+        transform: rotate(12deg) scale(1.18);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 30px rgba(255, 230, 100, 0.6);
     }
 
+    /* -------- TEXTO -------- */
     .rpa-benefit-card h3 {
         color: var(--color-azul-energy);
-        font-size: 1.1rem;
-        font-weight: bold;
+        font-size: 1.3rem;
+        font-weight: 600;
         transition: color 0.3s ease;
     }
 
@@ -610,14 +674,37 @@
         color: var(--color-amarillo-pure);
     }
 
-    @keyframes pulseIcon {
-        0%, 100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 rgba(255,215,0,0.4);
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+        .rpa-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
         }
-        50% {
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(255,230,80,0.5);
+
+        .rpa-benefit-card {
+            padding: 3rem 2rem;
+        }
+
+        .rpa-benefit-card:nth-child(3n) {
+            border-right: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .rpa-benefit-card:nth-child(2n) {
+            border-right: none;
+        }
+
+        .rpa-benefit-card:nth-child(n+4) {
+            border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .rpa-benefit-card:nth-child(n+5) {
+            border-bottom: none;
+        }
+
+        .rpa-benefit-icon {
+            width: 90px;
+            height: 90px;
+            font-size: 2.6rem;
         }
     }
 

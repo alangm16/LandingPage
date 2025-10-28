@@ -217,6 +217,18 @@
                 <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
+                <div class="slide">
+                    <div class="logo-bg-alt">
+                        <img src="assets/img/Clientes/logoKosmos.png" alt="Kosmos" class="aliados-logo-image">
+                    </div>
+                </div>                
+                <div class="slide">
+                    <div class="logo-bg">
+                        <img src="assets/img/Clientes/logoPerformer.png" alt="Performer Logistics" class="aliados-logo-image">
+                    </div>
+                </div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
 
                 <!-- duplicados para efecto infinito -->
                 <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
@@ -225,6 +237,18 @@
                 <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
+                <div class="slide">
+                    <div class="logo-bg-alt">
+                        <img src="assets/img/Clientes/logoKosmos.png" alt="Kosmos" class="aliados-logo-image">
+                    </div>
+                </div>                
+                <div class="slide">
+                    <div class="logo-bg">
+                        <img src="assets/img/Clientes/logoPerformer.png" alt="Performer Logistics" class="aliados-logo-image">
+                    </div>
+                </div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
             </div>
         </div>
 
@@ -236,6 +260,18 @@
                 <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
+                <div class="slide">
+                    <div class="logo-bg-alt">
+                        <img src="assets/img/Clientes/logoKosmos.png" alt="Kosmos" class="aliados-logo-image">
+                    </div>
+                </div>                
+                <div class="slide">
+                    <div class="logo-bg">
+                        <img src="assets/img/Clientes/logoPerformer.png" alt="Performer Logistics" class="aliados-logo-image">
+                    </div>
+                </div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
 
                 <!-- duplicados para efecto infinito -->
                 <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
@@ -244,6 +280,18 @@
                 <div class="slide"><img src="assets/img/Clientes/tigres.png" alt="Tigres UANL" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/afirme.png" alt="Afirme Seguros" class="aliados-logo-image"></div>
                 <div class="slide"><img src="assets/img/Clientes/sanatorio.png" alt="Sanatorios Español" class="aliados-logo-image"></div>
+                <div class="slide">
+                    <div class="logo-bg-alt">
+                        <img src="assets/img/Clientes/logoKosmos.png" alt="Kosmos" class="aliados-logo-image">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="logo-bg">
+                        <img src="assets/img/Clientes/logoPerformer.png" alt="Performer Logistics" class="aliados-logo-image">
+                    </div>
+                </div>
+                <div class="slide"><img src="assets/img/Clientes/versa.png" alt="Versa" class="aliados-logo-image"></div>
+                <div class="slide"><img src="assets/img/Clientes/metrica.png" alt="Métrica Movil" class="aliados-logo-image"></div>
             </div>
         </div>
 
@@ -348,15 +396,19 @@
 
     <!-- Script principal -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Menú móvil
+        // Menú móvil
             function toggleMenu() {
-                document.getElementById('navLinks').classList.toggle('active');
-            }
-            function closeMenu() {
-                document.getElementById('navLinks').classList.remove('active');
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.toggle('active');
             }
 
+            function closeMenu() {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+            }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            
             // Smooth scroll
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {

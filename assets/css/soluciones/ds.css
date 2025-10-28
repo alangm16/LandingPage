@@ -55,6 +55,7 @@
         line-height: 1.6;
         color: #333;
         background-color: var(--color-blanco-ostion);
+        overflow-x: hidden;
     }
 
     /* Estilos específicos para la página de Desarrollo de Software */
@@ -353,156 +354,228 @@
         color: var(--color-amarillo-pure);
     }
 
-    /* Sección: ¿Cómo funciona? */
-
-    .how-it-works {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco-mixto);
+    /* Sección: Soluciones de Desarrollo */
+    .dev-solutions {
+        padding: 5rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco-mixto) 0%, var(--color-blanco) 100%);
     }
 
-    .how-it-works h2 {
+    .dev-solutions h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-        transition: color 0.3s ease;
+        font-size: 2.6rem;
+        margin-bottom: 4rem;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
-    .how-it-works h2:hover {
+    .dev-solutions h2:hover {
+        transform: scale(1.05);
         color: var(--color-amarillo-pure);
     }
 
-    .how-it-works-grid {
+    /* Grid */
+    .dev-solutions-grid {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        gap: 3rem;
     }
 
-    /* Cards */
-    .how-card {
-        background-color: var(--color-blanco);
-        padding: 2.5rem;
-        border-radius: 10px;
+    /* Items circulares */
+    .dev-solution {
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        cursor: pointer;
+        padding: 2rem 1.5rem;
+        background: transparent;
+        position: relative;
     }
 
-    .how-card:hover {
-        transform: translateY(-5px) scale(1.03);
-        box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-        background-color: var(--color-blanco-ostion);
-    }
-
-    .how-card-icon {
-        width: 80px;
-        height: 80px;
-        background-color: var(--color-blanco-mixto);
+    /* Iconos circulares */
+    .dev-solution-icon {
+        width: 130px;
+        height: 130px;
+        background: var(--color-blanco-ostion);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 2.5rem;
+        margin: 0 auto 1.8rem;
+        font-size: 3rem;
         color: var(--color-amarillo-pure);
-        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        border: 3px solid rgba(0,0,0,0.15);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        transition: transform 0.4s ease, color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+        animation: iconPulseDev 3s infinite ease-in-out;
     }
 
-    .how-card:hover .how-card-icon {
-        transform: scale(1.2);
+    /* Hover icono */
+    .dev-solution:hover .dev-solution-icon {
         background-color: var(--color-amarillo-pure);
         color: var(--color-blanco);
+        border-color: rgba(255,230,100,0.8);
+        box-shadow: 0 0 25px rgba(255,230,80,0.6);
+        transform: scale(1.15) rotate(8deg);
     }
 
-    .how-card h3 {
+    /* Títulos */
+    .dev-solution h3 {
         color: var(--color-azul-energy);
         font-size: 1.3rem;
         margin-bottom: 1rem;
-        font-weight: bold;
+        font-weight: 600;
         transition: color 0.3s ease;
     }
 
-    .how-card:hover h3 {
+    .dev-solution:hover h3 {
         color: var(--color-amarillo-pure);
     }
 
-    .how-card p {
+    /* Párrafos */
+    .dev-solution p {
         color: var(--color-azul-energy);
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.6;
     }
 
-    /* Sección: Especializaciones / Beneficios */
-    .dev-benefits {
-        padding: 4rem 2rem;
-        background-color: var(--color-blanco);
+    /* Animación pulso iconos */
+    @keyframes iconPulseDev {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 rgba(255,215,0,0.3);
+        }
+        50% {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255,230,80,0.5);
+        }
     }
 
+    /* Responsive */
+    @media (max-width: 900px) {
+        .dev-solutions-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Sección: Especializaciones / Desarrollo Software */
+
+    .dev-benefits {
+        padding: 6rem 2rem;
+        background: linear-gradient(180deg, var(--color-blanco) 0%, var(--color-blanco-mixto) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* -------- TÍTULO -------- */
     .dev-benefits h2 {
         text-align: center;
         color: var(--color-azul-energy);
-        font-size: 2.2rem;
-        margin-bottom: 3rem;
-        transition: color 0.3s ease;
+        font-size: 2.6rem;
+        margin-bottom: 4rem;
+        transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .dev-benefits h2:hover {
+        transform: scale(1.05);
         color: var(--color-amarillo-pure);
     }
 
+    /* -------- GRID -------- */
     .dev-benefits-grid {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
     }
 
+    /* -------- ITEMS -------- */
     .dev-benefit-card {
-        background-color: var(--color-blanco-ostion);
-        padding: 2rem;
-        border-radius: 10px;
+        padding: 4rem 2.5rem;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        cursor: pointer;
+        border-right: 3px solid rgba(0, 0, 0, 0.2);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: transparent;
     }
 
-    .dev-benefit-card:hover {
-        transform: scale(1.08);
-        box-shadow: 0 8px 22px rgba(0,0,0,0.15);
-        background-color: var(--color-blanco-mixto);
+    /* Eliminar borde derecho de la última columna */
+    .dev-benefit-card:nth-child(3n) {
+        border-right: none;
     }
 
+    /* Eliminar borde inferior de la última fila */
+    .dev-benefit-card:nth-child(n+4) {
+        border-bottom: none;
+    }
+
+    /* -------- ICONOS -------- */
     .dev-benefit-icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 1rem;
+        width: 110px;
+        height: 110px;
+        background: radial-gradient(circle at top left, var(--color-blanco), var(--color-blanco-mixto));
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 auto 1.8rem;
         font-size: 3rem;
         color: var(--color-amarillo-pure);
-        transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+        animation: iconPulseHow 3s infinite ease-in-out;
     }
 
+    /* Hover dinámico */
     .dev-benefit-card:hover .dev-benefit-icon {
-        transform: scale(1.25);
-        color: var(--color-blanco);
-        background-color: var(--color-amarillo-pure);
+        transform: rotate(12deg) scale(1.18);
+        color: var(--color-azul-energy);
+        box-shadow: 0 0 30px rgba(255, 230, 100, 0.6);
     }
 
+    /* -------- TEXTO -------- */
     .dev-benefit-card h3 {
         color: var(--color-azul-energy);
-        font-size: 1.1rem;
-        font-weight: bold;
+        font-size: 1.3rem;
+        font-weight: 600;
         transition: color 0.3s ease;
     }
 
     .dev-benefit-card:hover h3 {
         color: var(--color-amarillo-pure);
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+        .dev-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .dev-benefit-card {
+            padding: 3rem 2rem;
+        }
+
+        .dev-benefit-card:nth-child(3n) {
+            border-right: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .dev-benefit-card:nth-child(2n) {
+            border-right: none;
+        }
+
+        .dev-benefit-card:nth-child(n+4) {
+            border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .dev-benefit-card:nth-child(n+5) {
+            border-bottom: none;
+        }
+
+        .dev-benefit-icon {
+            width: 90px;
+            height: 90px;
+            font-size: 2.6rem;
+        }
     }
 
     /* Sección: CTA Final */
